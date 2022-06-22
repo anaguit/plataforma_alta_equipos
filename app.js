@@ -12,3 +12,7 @@ app.use(method_override("_method"));
 app.set("view engine","ejs");
 
 app.listen(process.env.PORT || 3000,()=> {console.log("servidor corriendo")});
+
+app.get("/",(req,res)=>{
+    res.render("inicio")
+});
