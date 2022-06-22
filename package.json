@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/anaguit/plataforma_alta_equipos/issues"
   },
-  "homepage": "https://github.com/anaguit/plataforma_alta_equipos#readme"
+  "homepage": "https://github.com/anaguit/plataforma_alta_equipos#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "method-override": "^3.0.0"
+  }
 }
