@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./parciales/head") %>
+<body>
+    <%- include("./parciales/header") %>
+    <main>
+        <h3>Agregar nuevo proceso</h3>
+        <form action="/procesos" method="POST">
+            <div class="campos_formulario">
+                <label>Proceso</label>
+                <select>
+                    <option></option>
+                </select>
+            </div>
+            <div class="campos_formulario">
+                <label>Estado</label>
+                <select>
+                    <option></option>
+                </select>
+            </div>
+            <div class="campos_formulario">
+                <label>Responsable</label>
+                <select>
+                    <option></option>
+                </select>
+            </div>
+            <div class="botones_formulario">
+                <button type="submit">Aceptar</button>
+                <button type="delete">Cancelar</button>
+            </div>
+        </form>
+    </main>
+    <%- include("./parciales/footer") %>
+</body>
+</html>
