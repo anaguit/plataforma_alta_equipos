@@ -2,7 +2,38 @@ function cuenta_data(sequelize,DataTypes){
     let alias = "cuenta";
 
     let cols = {
-        id:{type:DataTypes.INTEGER,primaryKey:true,autoIncrement:true,allowNull:false}
+        id:{type:DataTypes.INTEGER,primaryKey:true,autoIncrement:true,allowNull:false},
+        fecha_ingreso_mail:{type:DataTypes.date,allowNull:false},
+        pos_sunmi:{type:DataTypes.STRING(50),allowNull:false},
+        id_tipo_alta:{type:DataTypes.INTEGER,allowNull:false},
+        id_distribuidor:{type:DataTypes.INTEGER},
+        distribuidor_nuevo:{type:DataTypes.STRING(50)},
+        numero_cuenta:{type:DataTypes.STRING(50)},
+        busqueda_x_id:{type:DataTypes.STRING(50)},
+        id_etapa_1:{type:DataTypes.INTEGER},
+        id_estado_1:{type:DataTypes.INTEGER},
+        id_responsable_1:{type:DataTypes.INTEGER},
+        id_etapa_2:{type:DataTypes.INTEGER},
+        id_estado_2:{type:DataTypes.INTEGER},
+        id_responsable_2:{type:DataTypes.INTEGER},
+        id_etapa_3:{type:DataTypes.INTEGER},
+        id_estado_3:{type:DataTypes.INTEGER},
+        id_responsable_3:{type:DataTypes.INTEGER},
+        id_etapa_4:{type:DataTypes.INTEGER},
+        id_estado_4:{type:DataTypes.INTEGER},
+        id_responsable_4:{type:DataTypes.INTEGER},
+        id_etapa_5:{type:DataTypes.INTEGER},
+        id_estado_5:{type:DataTypes.INTEGER},
+        id_responsable_5:{type:DataTypes.INTEGER},
+        id_etapa_6:{type:DataTypes.INTEGER},
+        id_estado_6:{type:DataTypes.INTEGER},
+        id_responsable_6:{type:DataTypes.INTEGER},
+        id_etapa_7:{type:DataTypes.INTEGER},
+        id_estado_7:{type:DataTypes.INTEGER},
+        id_responsable_7:{type:DataTypes.INTEGER},
+        id_etapa_8:{type:DataTypes.INTEGER},
+        id_estado_8:{type:DataTypes.INTEGER},
+        id_responsable_8:{type:DataTypes.INTEGER,}
     };
 
     let config = {timestamps:false};
