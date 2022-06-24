@@ -13,39 +13,45 @@
         <form action="/guardar" method="POST">
             <div class="campos_formulario">
                 <label>Fecha de ingreso del mail</label>
-                <input>
+                <input type="date" name="fecha_mail">
             </div>
             <div class="campos_formulario">
                 <label>Número de pos</label>
-                <input>
+                <input type="text" name="numero_pos">
             </div>
             <div class="campos_formulario">
                 <label>Tipo de alta</label>
-                <select>
-                    <option></option>
+                <select name="tipo_alta">
+                    <option value="" >Seleccioná opción</option>
+                    <% for(let tipo_alta of tipos_alta) { %>
+                        <option value="<%= tipo_alta.id %>"><%= tipo_alta.tipo %></option>
+                        <% } %>
                 </select>
             </div>
             <div class="campos_formulario">
                 <label>Distribuidor</label>
-                <select>
-                    <option></option>
+                <select name="distribuidor">
+                    <option value="">Seleccioná distribuidor</option>
+                    <% for(let distribuidor of distribuidores){ %> 
+                        <option value="<%= distribuidor.id %>"><%= distribuidor.nombre %></option>
+                    <% } %>
                 </select>
             </div>
             <div class="campos_formulario">
                 <label>Distribuidor nuevo</label>
-                <input>
+                <input type="text" name="distribuidor_nuevo">
             </div>
             <div class="campos_formulario">
                 <label>Numero de cuenta</label>
-                <input>
+                <input type="text" name="numero_cuenta">
             </div>
             <div class="campos_formulario">
                 <label>Búsqueda por id??????</label>
-                <input>
+                <input type="text" name="buqueda_id">
             </div>
             <div class="botones_formulario">
                 <button type="submit">Continuar</button>
-                <button type="delete">Borrar</button>
+                <button type="reset">Borrar</button>
             </div>
         </form>
     </main>

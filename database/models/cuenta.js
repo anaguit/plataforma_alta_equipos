@@ -3,7 +3,7 @@ function cuenta_data(sequelize,DataTypes){
 
     let cols = {
         id:{type:DataTypes.INTEGER,primaryKey:true,autoIncrement:true,allowNull:false},
-        fecha_ingreso_mail:{type:DataTypes.date,allowNull:false},
+        fecha_ingreso_mail:{type:DataTypes.DATE,allowNull:false},
         pos_sunmi:{type:DataTypes.STRING(50),allowNull:false},
         id_tipo_alta:{type:DataTypes.INTEGER,allowNull:false},
         id_distribuidor:{type:DataTypes.INTEGER},
@@ -42,7 +42,7 @@ function cuenta_data(sequelize,DataTypes){
 
     cuenta.associate = (modelos)=>{
         cuenta.belongsTo(modelos.distribuidor,{
-            as:cuenta_distribuidor,
+            as:"cuenta_distribuidor",
             foreingKey:"id_distribuidor"
         }),
         cuenta.belongsTo(modelos.estado,{
