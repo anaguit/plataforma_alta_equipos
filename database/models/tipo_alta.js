@@ -10,6 +10,13 @@ function tipo_alta_data(sequelize,DataTypes){
 
     let tipo_alta = sequelize.define(alias,cols,config);
 
+    tipo_alta.associate = (modelos)=>{
+        tipo_alta.hasMany(modelos.cuenta,{
+            as:"tipo_alta_cuenta",
+            foreignKey:"id_tipo_alta"
+        })
+    };
+    
     return tipo_alta;
 };
 

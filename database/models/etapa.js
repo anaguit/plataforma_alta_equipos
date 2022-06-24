@@ -10,6 +10,12 @@ function etapa_data(sequelize,DataTypes){
 
     let etapa = sequelize.define(alias,cols,config);
 
+    etapa.associate = (modelos)=>{
+        etapa.hasMany(modelos.cuenta,{
+            as:"etapa_cuenta",
+            foreignKey:"id_etapa"
+        });
+    };
     return etapa;
 };
 

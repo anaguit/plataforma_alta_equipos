@@ -10,6 +10,13 @@ function distribuidor_data(sequelize,DataTypes){
 
     let distribuidor = sequelize.define(alias,cols,config);
 
+    distribuidor.associate = (modelos)=>{
+        distribuidor.hasMany(modelos.cuenta,{
+            as:"distribuidor_cuenta",
+            foreignKey:"id_distribuidor"
+        });
+    };
+
     return distribuidor;
 };
 

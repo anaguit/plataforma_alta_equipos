@@ -10,6 +10,12 @@ function estado_data(sequelize,DataTypes){
 
     let estado = sequelize.define(alias,cols,config);
 
+    estado.associate = (modelos)=>{
+        estado.hasMany(modelos.cuenta,{
+            as:"estado_cuenta",
+            foreignKey:"id_estado"
+        });
+    };
     return estado;
 };
 

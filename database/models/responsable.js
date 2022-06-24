@@ -10,6 +10,13 @@ function responsable_data(sequelize,DataTypes){
 
     let responsable = sequelize.define(alias,cols,config);
 
+    responsable.associate = (modelos)=>{
+        responsable.hasMany(modelos.cuenta,{
+            as:"responsable_cuenta",
+            foreignKey:"id_responsable"
+        })
+    };
+    
     return responsable;
 };
 
