@@ -1,7 +1,10 @@
 function estado_data(sequelize,DataTypes){
     let alias = "estado";
 
-    let cols = {};
+    let cols = {
+        id:{type:DataTypes.INTEGER,primaryKey:true,autoIncrement:true,allowNull:false},
+        estado:{type:DataTypes.STRING(50),allowNull:false}
+    };
 
     let config = {timestamps:false};
 

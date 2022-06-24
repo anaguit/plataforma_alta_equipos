@@ -1,7 +1,10 @@
 function etapa_data(sequelize,DataTypes){
-    let alias = "tetapa";
+    let alias = "etapa";
 
-    let cols = {};
+    let cols = {
+        id:{type:DataTypes.INTEGER,primaryKey:true,autoIncrement:true,allowNull:false},
+        etapa:{type:DataTypes.STRING(50),allowNull:false}
+    };
 
     let config = {timestamps:false};
 
