@@ -4,7 +4,47 @@
 <body>
     <%- include("./parciales/header") %>
     <main>
-        <h1>Main</h1>
+        <form action="/resultados" method="POST">
+            <input>
+            <button type="submit">Buscar</button>
+        </form>
+        <h1>Cargar equipo nuevo</h1>
+
+        <form action="/" method="POST"></form>
+        <div class="campos_formulario">
+            <label>Fecha de ingreso del mail</label>
+            <input>
+        </div>
+        <div class="campos_formulario">
+            <label>Número de pos</label>
+            <input>
+        </div>
+        <div class="campos_formulario">
+            <label>Tipo de alta</label>
+            <select>
+                <option></option>
+            </select>
+        </div>
+        <div class="campos_formulario">
+            <label>Distribuidor</label>
+            <select>
+                <option></option>
+            </select>
+        </div>
+        <div class="campos_formulario">
+            <label>Distribuidor nuevo</label>
+            <input>
+        </div>
+        <div class="campos_formulario">
+            <label>Numero de cuenta</label>
+            <input>
+        </div>
+        <div class="campos_formulario">
+            <label>Búsqueda por id??????</label>
+            <input>
+        </div>
+        <button type="submit">Continuar</button>
+        <button type="delete">Borrar</button>
     </main>
     <%- include("./parciales/footer") %>
 </body>
