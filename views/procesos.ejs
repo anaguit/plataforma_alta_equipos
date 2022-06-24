@@ -8,20 +8,29 @@
         <form action="/procesos" method="POST">
             <div class="campos_formulario">
                 <label>Proceso</label>
-                <select>
-                    <option></option>
+                <select name="proceso">
+                    <option value="">Seleccioná etapa</option>
+                    <% for(let proceso of procesos) { %>
+                        <option value="<%= proceso.id %>"><%= proceso.etapa %></option>
+                    <% } %>
                 </select>
             </div>
             <div class="campos_formulario">
                 <label>Estado</label>
-                <select>
-                    <option></option>
+                <select name="estado">
+                    <option value="">seleccioná estado</option>
+                    <% for(let estado of estados) { %>
+                        <option value="<%= estado.id %>"><%= estado.estado %></option>
+                    <% } %>
                 </select>
             </div>
             <div class="campos_formulario">
                 <label>Responsable</label>
-                <select>
-                    <option></option>
+                <select name="responsable">
+                    <option value="">Seleccioná responsable</option>
+                    <% for(let responsable of responsables){ %>
+                        <option value="<%= responsable.id %>"><%= responsable.nombre %></option> 
+                    <% } %>
                 </select>
             </div>
             <div class="botones_formulario">

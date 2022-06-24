@@ -27,7 +27,15 @@ let controlador_general = {
         res.redirect("/procesos")
     },
     procesos:(req,res)=>{
-        res.render("procesos");
+
+        let pedido_proceso = db.etapa.findAll();
+        let pedido_estado = db.estado.findAll();
+        let pedido_responsable = db.responsable.findAll();
+
+        Promise.all([pedido_proceso,pedido_estado,pedido_responsable])
+        .then(([procesos,estados,responsables])=>{
+            res.render("procesos",{procesos,estados,responsables});
+        });
     },
     guardar_proceso:(req,res)=>{
         res.redirect("/proceso_guardado");
