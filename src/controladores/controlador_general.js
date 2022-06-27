@@ -15,6 +15,7 @@ let controlador_general = {
     resultado_busqueda:(req,res)=>{
         let pedido_alta = db.tipo_alta.findAll();
         let pedido_distribuidor = db.distribuidor.findAll();
+        
 
         Promise.all([pedido_alta,pedido_distribuidor])
             .then(([tipos_alta,distribuidores])=>{
@@ -24,7 +25,22 @@ let controlador_general = {
             console.log(req.body);
     },
     guardar_inicio:(req,res)=>{
-        res.redirect("/procesos")
+        /*db.cuentas.create({
+            fecha_ingreso_mail:req.body.fecha_mail,
+            pos_sunmi:req.body.numero_pos,
+            id_tipo_alta:req.body.tipo_alta,
+            id_distribuidor:req.body.distribuidor,
+            distribuidor_nuevo:req.body.distribuidor_nuevo,
+            numero_cuenta:req.body.numero_cuenta,
+            busqueda_x_id:req.body.numero_pos + req.body.numero_cuenta
+        }).
+        then((resultados)=>{
+            console.log(req.body)*/
+            res.redirect("/procesos");
+        /*})
+        .catch((error)=>{
+            res.send("error")
+        })*/
     },
     procesos:(req,res)=>{
 
@@ -42,8 +58,19 @@ let controlador_general = {
     },
     proceso_guardado:(req,res)=>{
         res.render("proceso_guardado");
-    }
+    },
+    /*editar:(req,res)=>{
+        let pedido_alta = db.tipo_alta.findAll();
+        let pedido_distribuidor = db.distribuidor.findAll();
 
+        Promise.all([pedido_alta,pedido_distribuidor])
+            .then(([tipos_alta,distribuidores])=>{
+                res.render("equipo_encontrado",{tipos_alta,distribuidores});
+            });
+    },*/
+    guardar_editado:(req,res)=>{
+        res.send("prueba")
+    }
 };
 
 module.exports = controlador_general;
