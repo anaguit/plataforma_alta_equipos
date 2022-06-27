@@ -5,7 +5,7 @@
     <%- include("./parciales/header") %>
     <main>
         <h3>Equipo PBX</h3>
-        <form action="/guardar" method="POST">
+        <form action="/guardar_editado" method="POST">
             <div class="campos_formulario">
                 <label>Fecha de ingreso del mail</label>
                 <input type="date" name="fecha_mail">
@@ -40,16 +40,11 @@
                 <label>Numero de cuenta</label>
                 <input type="text" name="numero_cuenta">
             </div>
-            <div class="campos_formulario">
-                <label>Búsqueda por id??????</label>
-                <input type="text" name="buqueda_id">
-            </div>
             <div class="botones_formulario">
                 <button type="submit">Editar</button>
                 <button type="reset">Borrar</button>
             </div>
         </form>
-        <a href="/procesos"><button>Cargar nuevo proceso</button></a>
     </main>
     <%- include("./parciales/footer") %>
 </body>
