@@ -10,5 +10,8 @@ router.get("/procesos",controlador_general.procesos);
 router.post("/procesos",controlador_general.guardar_proceso);
 router.get("/proceso_guardado",controlador_general.proceso_guardado);
 
+//router.get("/editar",controlador_general.editar);
+router.post("/guardar_editado",controlador_general.guardar_editado);
+
 
 module.exports = router;
