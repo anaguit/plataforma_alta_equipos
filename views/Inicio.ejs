@@ -5,7 +5,10 @@
     <%- include("./parciales/header") %>
     <main>
         <form action="/resultados" method="POST">
-            <input>
+            <label>Número de pos</label>
+            <input type="text" name="nr_serie">
+            <label>Número de cuenta</label>
+            <input type="text" name="nr_cuenta">
             <button type="submit">Buscar</button>
         </form>
         <h1>Cargar equipo nuevo</h1>
