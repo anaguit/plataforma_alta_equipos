@@ -1,5 +1,5 @@
 function tipo_alta_data(sequelize,DataTypes){
-    let alias = "tipo_alta";
+    let alias = "Tipo_alta";
 
     let cols = {
         id:{type:DataTypes.INTEGER,primaryKey:true,autoIncrement:true,allowNull:false},
@@ -8,16 +8,16 @@ function tipo_alta_data(sequelize,DataTypes){
 
     let config = {timestamps:false};
 
-    let tipo_alta = sequelize.define(alias,cols,config);
+    let Tipo_alta = sequelize.define(alias,cols,config);
 
-    tipo_alta.associate = (modelos)=>{
-        tipo_alta.hasMany(modelos.cuenta,{
+    Tipo_alta.associate = (modelos)=>{
+        Tipo_alta.hasMany(modelos.Cuenta,{
             as:"tipo_alta_cuenta",
             foreignKey:"id_tipo_alta"
         })
     };
     
-    return tipo_alta;
+    return Tipo_alta;
 };
 
 module.exports = tipo_alta_data;

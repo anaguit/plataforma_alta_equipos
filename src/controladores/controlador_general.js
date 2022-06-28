@@ -1,9 +1,10 @@
+let{ sequelize, Sequelize } = require('../../database/models');
 let db = require("../../database/models");
 let Op = db.Sequelize.Op
 let controlador_general = {
     inicio:(req,res)=>{
-        let pedido_alta = db.tipo_alta.findAll();
-        let pedido_distribuidor = db.distribuidor.findAll();
+        let pedido_alta = db.Tipo_alta.findAll();
+        let pedido_distribuidor = db.Distribuidor.findAll();
 
         Promise.all([pedido_alta,pedido_distribuidor])
             .then(([tipos_alta,distribuidores])=>{
@@ -25,19 +26,20 @@ let controlador_general = {
             console.log(req.body);
     },
     guardar_inicio:(req,res)=>{
-        /*db.cuentas.create({
+        console.log(req.body);
+        db.Cuenta.create({
             fecha_ingreso_mail:req.body.fecha_mail,
             pos_sunmi:req.body.numero_pos,
             id_tipo_alta:req.body.tipo_alta,
             id_distribuidor:req.body.distribuidor,
             distribuidor_nuevo:req.body.distribuidor_nuevo,
             numero_cuenta:req.body.numero_cuenta,
-            busqueda_x_id:req.body.numero_pos + req.body.numero_cuenta
+            busqueda_x_id:req.body.numero_pos
         }).
         then((resultados)=>{
-            console.log(req.body)*/
+            console.log(req.body)
             res.redirect("/procesos");
-        /*})
+        })/*
         .catch((error)=>{
             res.send("error")
         })*/

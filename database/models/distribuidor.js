@@ -1,5 +1,5 @@
 function distribuidor_data(sequelize,DataTypes){
-    let alias = "distribuidor";
+    let alias = "Distribuidor";
 
     let cols = {
         id:{type:DataTypes.INTEGER,primaryKey:true,autoIncrement:true,allowNull:false},
@@ -8,16 +8,16 @@ function distribuidor_data(sequelize,DataTypes){
 
     let config = {timestamps:false};
 
-    let distribuidor = sequelize.define(alias,cols,config);
+    let Distribuidor = sequelize.define(alias,cols,config);
 
-    distribuidor.associate = (modelos)=>{
-        distribuidor.hasMany(modelos.cuenta,{
+    Distribuidor.associate = (modelos)=>{
+        Distribuidor.hasMany(modelos.Cuenta,{
             as:"distribuidor_cuenta",
             foreignKey:"id_distribuidor"
         });
     };
 
-    return distribuidor;
+    return Distribuidor;
 };
 
 module.exports = distribuidor_data;
