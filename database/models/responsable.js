@@ -1,5 +1,5 @@
 function responsable_data(sequelize,DataTypes){
-    let alias = "responsable";
+    let alias = "Responsable";
 
     let cols = {
         id:{type:DataTypes.INTEGER,primaryKey:true,autoIncrement:true,allowNull:false},
@@ -8,44 +8,44 @@ function responsable_data(sequelize,DataTypes){
 
     let config = {timestamps:false};
 
-    let responsable = sequelize.define(alias,cols,config);
+    let Responsable = sequelize.define(alias,cols,config);
 
-    responsable.associate = (modelos)=>{
-        responsable.hasMany(modelos.Cuenta,{
-            as:"responsable_cuenta_1",
+    Responsable.associate = (modelos)=>{
+        Responsable.hasMany(modelos.Cuenta,{
+            as:"Responsable_cuenta_1",
             foreignKey:"id_responsable_1"
         }),
-        responsable.hasMany(modelos.Cuenta,{
-            as:"responsable_cuenta_2",
+        Responsable.hasMany(modelos.Cuenta,{
+            as:"Responsable_cuenta_2",
             foreignKey:"id_responsable_2"
         }),
-        responsable.hasMany(modelos.Cuenta,{
-            as:"responsable_cuenta_3",
+        Responsable.hasMany(modelos.Cuenta,{
+            as:"Responsable_cuenta_3",
             foreignKey:"id_responsable_3"
         }),
-        responsable.hasMany(modelos.Cuenta,{
-            as:"responsable_cuenta_4",
+        Responsable.hasMany(modelos.Cuenta,{
+            as:"Responsable_cuenta_4",
             foreignKey:"id_responsable_4"
         }),
-        responsable.hasMany(modelos.Cuenta,{
-            as:"responsable_cuenta_5",
+        Responsable.hasMany(modelos.Cuenta,{
+            as:"Responsable_cuenta_5",
             foreignKey:"id_responsable_5"
         }),
-        responsable.hasMany(modelos.Cuenta,{
-            as:"responsable_cuenta_6",
+        Responsable.hasMany(modelos.Cuenta,{
+            as:"Responsable_cuenta_6",
             foreignKey:"id_responsable_6"
         }),
-        responsable.hasMany(modelos.Cuenta,{
-            as:"responsable_cuenta_7",
+        Responsable.hasMany(modelos.Cuenta,{
+            as:"Responsable_cuenta_7",
             foreignKey:"id_responsable_7"
         }),
-        responsable.hasMany(modelos.Cuenta,{
-            as:"responsable_cuenta_8",
+        Responsable.hasMany(modelos.Cuenta,{
+            as:"Responsable_cuenta_8",
             foreignKey:"id_responsable_8"
         });
     };
     
-    return responsable;
+    return Responsable;
 };
 
 module.exports = responsable_data;

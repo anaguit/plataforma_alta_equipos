@@ -49,99 +49,99 @@ function cuenta_data(sequelize,DataTypes){
             as:"Cuenta_tipo_alta",
             foreingKey:"id_tipo_alta"
         }),
-        Cuenta.belongsTo(modelos.estado,{
+        Cuenta.belongsTo(modelos.Estado,{
             as:"Cuenta_estado_1",
             foreingKey:"id_estado_1"
         }),
-        Cuenta.belongsTo(modelos.etapa,{
+        Cuenta.belongsTo(modelos.Etapa,{
             as:"Cuenta_etapa_1",
             foreingKey:"id_etapa_1"
         }),
-        Cuenta.belongsTo(modelos.responsable,{
+        Cuenta.belongsTo(modelos.Responsable,{
             as:"Cuenta_responsable_1",
             foreingKey:"id_responsable_1"
         }),
-        Cuenta.belongsTo(modelos.estado,{
+        Cuenta.belongsTo(modelos.Estado,{
             as:"Cuenta_estado_2",
             foreingKey:"id_estado_2"
         }),
-        Cuenta.belongsTo(modelos.etapa,{
+        Cuenta.belongsTo(modelos.Etapa,{
             as:"Cuenta_etapa_2",
             foreingKey:"id_etapa_2"
         }),
-        Cuenta.belongsTo(modelos.responsable,{
+        Cuenta.belongsTo(modelos.Responsable,{
             as:"Cuenta_responsable_2",
             foreingKey:"id_responsable_2"
         }),
-        Cuenta.belongsTo(modelos.estado,{
+        Cuenta.belongsTo(modelos.Estado,{
             as:"Cuenta_estado_3",
             foreingKey:"id_estado_3"
         }),
-        Cuenta.belongsTo(modelos.etapa,{
+        Cuenta.belongsTo(modelos.Etapa,{
             as:"Cuenta_etapa_3",
             foreingKey:"id_etapa_3"
         }),
-        Cuenta.belongsTo(modelos.responsable,{
+        Cuenta.belongsTo(modelos.Responsable,{
             as:"Cuenta_responsable_3",
             foreingKey:"id_responsable_3"
         }),
-        Cuenta.belongsTo(modelos.estado,{
+        Cuenta.belongsTo(modelos.Estado,{
             as:"Cuenta_estado_4",
             foreingKey:"id_estado_4"
         }),
-        Cuenta.belongsTo(modelos.etapa,{
+        Cuenta.belongsTo(modelos.Etapa,{
             as:"Cuenta_etapa_4",
             foreingKey:"id_etapa_4"
         }),
-        Cuenta.belongsTo(modelos.responsable,{
+        Cuenta.belongsTo(modelos.Responsable,{
             as:"Cuenta_responsable_4",
             foreingKey:"id_responsable_4"
         }),
-        Cuenta.belongsTo(modelos.estado,{
+        Cuenta.belongsTo(modelos.Estado,{
             as:"Cuenta_estado_5",
             foreingKey:"id_estado_5"
         }),
-        Cuenta.belongsTo(modelos.etapa,{
+        Cuenta.belongsTo(modelos.Etapa,{
             as:"Cuenta_etapa_5",
             foreingKey:"id_etapa_5"
         }),
-        Cuenta.belongsTo(modelos.responsable,{
+        Cuenta.belongsTo(modelos.Responsable,{
             as:"Cuenta_responsable_5",
             foreingKey:"id_responsable_5"
         }),
-        Cuenta.belongsTo(modelos.estado,{
+        Cuenta.belongsTo(modelos.Estado,{
             as:"Cuenta_estado_6",
             foreingKey:"id_estado_6"
         }),
-        Cuenta.belongsTo(modelos.etapa,{
+        Cuenta.belongsTo(modelos.Etapa,{
             as:"Cuenta_etapa_6",
             foreingKey:"id_etapa_6"
         }),
-        Cuenta.belongsTo(modelos.responsable,{
+        Cuenta.belongsTo(modelos.Responsable,{
             as:"Cuenta_responsable_6",
             foreingKey:"id_responsable_6"
         }),
-        Cuenta.belongsTo(modelos.estado,{
+        Cuenta.belongsTo(modelos.Estado,{
             as:"Cuenta_estado_7",
             foreingKey:"id_estado_7"
         }),
-        Cuenta.belongsTo(modelos.etapa,{
+        Cuenta.belongsTo(modelos.Etapa,{
             as:"Cuenta_etapa_7",
             foreingKey:"id_etapa_7"
         }),
-        Cuenta.belongsTo(modelos.responsable,{
+        Cuenta.belongsTo(modelos.Responsable,{
             as:"Cuenta_responsable_7",
             foreingKey:"id_responsable_7"
         }),
-        Cuenta.belongsTo(modelos.estado,{
+        Cuenta.belongsTo(modelos.Estado,{
             as:"Cuenta_estado_8",
             foreingKey:"id_estado_8"
         }),
-        Cuenta.belongsTo(modelos.etapa,{
+        Cuenta.belongsTo(modelos.Etapa,{
             as:"Cuenta_etapa_8",
             foreingKey:"id_etapa_8"
         }),
-        Cuenta.belongsTo(modelos.responsable,{
+        Cuenta.belongsTo(modelos.Responsable,{
             as:"Cuenta_responsable_8",
             foreingKey:"id_responsable_8"
         })
