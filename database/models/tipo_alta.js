@@ -12,8 +12,8 @@ function tipo_alta_data(sequelize,DataTypes){
 
     Tipo_alta.associate = (modelos)=>{
         Tipo_alta.hasMany(modelos.Cuenta,{
-            as:"tipo_alta_cuenta",
-            foreignKey:"id_tipo_alta"
+            as:"TipoAltaCuenta",
+            foreignKey:"CuentaTipoAltaId"
         })
     };
     

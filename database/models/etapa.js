@@ -13,35 +13,35 @@ function etapa_data(sequelize,DataTypes){
     Etapa.associate = (modelos)=>{
         Etapa.hasMany(modelos.Cuenta,{
             as:"Etapa_cuenta_1",
-            foreignKey:"id_etapa_1"
+            foreignKey:"CuentaEtapa1Id"
         }),
         Etapa.hasMany(modelos.Cuenta,{
             as:"Etapa_cuenta_2",
-            foreignKey:"id_etapa_2"
+            foreignKey:"CuentaEtapa2Id"
         }),
         Etapa.hasMany(modelos.Cuenta,{
             as:"Etapa_cuenta_3",
-            foreignKey:"id_etapa_3"
+            foreignKey:"CuentaEtapa3Id"
         }),
         Etapa.hasMany(modelos.Cuenta,{
             as:"Etapa_cuenta_4",
-            foreignKey:"id_etapa_4"
+            foreignKey:"CuentaEtapa4Id"
         }),
         Etapa.hasMany(modelos.Cuenta,{
             as:"Etapa_cuenta_5",
-            foreignKey:"id_etapa_5"
+            foreignKey:"CuentaEtapa5Id"
         }),
         Etapa.hasMany(modelos.Cuenta,{
             as:"Etapa_cuenta_6",
-            foreignKey:"id_etapa_6"
+            foreignKey:"CuentaEtapa6Id"
         }),
         Etapa.hasMany(modelos.Cuenta,{
             as:"Etapa_cuenta_7",
-            foreignKey:"id_etapa_7"
+            foreignKey:"CuentaEtapa7Id"
         }),
         Etapa.hasMany(modelos.Cuenta,{
             as:"Etapa_cuenta_8",
-            foreignKey:"id_etapa_8"
+            foreignKey:"CuentaEtapa8Id"
         });
     };
     return Etapa;

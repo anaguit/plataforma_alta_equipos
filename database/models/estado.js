@@ -13,35 +13,35 @@ function estado_data(sequelize,DataTypes){
     Estado.associate = (modelos)=>{
         Estado.hasMany(modelos.Cuenta,{
             as:"Estado_cuenta_1",
-            foreignKey:"id_estado_1"
+            foreignKey:"CuentaEstado1Id"
         }),
         Estado.hasMany(modelos.Cuenta,{
             as:"Estado_cuenta_2",
-            foreignKey:"id_estado_2"
+            foreignKey:"CuentaEstado2Id"
         }),
         Estado.hasMany(modelos.Cuenta,{
             as:"Estado_cuenta_3",
-            foreignKey:"id_estado_3"
+            foreignKey:"CuentaEstado3Id"
         }),
         Estado.hasMany(modelos.Cuenta,{
             as:"Estado_cuenta_4",
-            foreignKey:"id_estado_4"
+            foreignKey:"CuentaEstado4Id"
         }),
         Estado.hasMany(modelos.Cuenta,{
             as:"Estado_cuenta_5",
-            foreignKey:"id_estado_5"
+            foreignKey:"CuentaEstado5Id"
         }),
         Estado.hasMany(modelos.Cuenta,{
             as:"Estado_cuenta_6",
-            foreignKey:"id_estado_6"
+            foreignKey:"CuentaEstado6Id"
         }),
         Estado.hasMany(modelos.Cuenta,{
             as:"Estado_cuenta_7",
-            foreignKey:"id_estado_7"
+            foreignKey:"CuentaEstado7Id"
         }),
         Estado.hasMany(modelos.Cuenta,{
             as:"Estado_cuenta_8",
-            foreignKey:"id_estado_8"
+            foreignKey:"CuentaEstado8Id"
         });
     };
     return Estado;

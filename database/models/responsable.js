@@ -13,35 +13,35 @@ function responsable_data(sequelize,DataTypes){
     Responsable.associate = (modelos)=>{
         Responsable.hasMany(modelos.Cuenta,{
             as:"Responsable_cuenta_1",
-            foreignKey:"id_responsable_1"
+            foreignKey:"CuentaResponsable1Id"
         }),
         Responsable.hasMany(modelos.Cuenta,{
             as:"Responsable_cuenta_2",
-            foreignKey:"id_responsable_2"
+            foreignKey:"CuentaResponsable2Id"
         }),
         Responsable.hasMany(modelos.Cuenta,{
             as:"Responsable_cuenta_3",
-            foreignKey:"id_responsable_3"
+            foreignKey:"CuentaResponsable3Id"
         }),
         Responsable.hasMany(modelos.Cuenta,{
             as:"Responsable_cuenta_4",
-            foreignKey:"id_responsable_4"
+            foreignKey:"CuentaResponsable4Id"
         }),
         Responsable.hasMany(modelos.Cuenta,{
             as:"Responsable_cuenta_5",
-            foreignKey:"id_responsable_5"
+            foreignKey:"CuentaResponsable5Id"
         }),
         Responsable.hasMany(modelos.Cuenta,{
             as:"Responsable_cuenta_6",
-            foreignKey:"id_responsable_6"
+            foreignKey:"CuentaResponsable6Id"
         }),
         Responsable.hasMany(modelos.Cuenta,{
             as:"Responsable_cuenta_7",
-            foreignKey:"id_responsable_7"
+            foreignKey:"CuentaResponsable7Id"
         }),
         Responsable.hasMany(modelos.Cuenta,{
             as:"Responsable_cuenta_8",
-            foreignKey:"id_responsable_8"
+            foreignKey:"CuentaResponsable8Id"
         });
     };
     

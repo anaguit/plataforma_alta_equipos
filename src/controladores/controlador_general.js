@@ -14,7 +14,26 @@ let controlador_general = {
             console.log(req.body);
     },
     resultado_busqueda:(req,res)=>{
-        let pedido_alta = db.tipo_alta.findAll();
+        console.log(req.body);
+        let pedido_cuenta = db.Cuenta.findOne({
+            where:{busqueda_x_id:req.body.nr_serie + req.body.nr_cuenta},
+            /*include:[{association:"CuentaDistribuidor"},{association:"CuentaTipoAlta"},
+                {association:"CuentaEstado1"},{association:"CuentaEtapa1"},{association:"CuentaResponsable1"},
+                {association:"CuentaEstado2"},{association:"CuentaEtapa2"},{association:"CuentaResponsable2"},
+                {association:"CuentaEstado3"},{association:"CuentaEtapa3"},{association:"CuentaResponsable3"},
+                {association:"CuentaEstado4"},{association:"CuentaEtapa4"},{association:"CuentaResponsable4"},
+                {association:"CuentaEstado5"},{association:"CuentaEtapa5"},{association:"CuentaResponsable5"},
+                {association:"CuentaEstado6"},{association:"CuentaEtapa6"},{association:"CuentaResponsable6"},
+                {association:"CuentaEstado7"},{association:"CuentaEtapa7"},{association:"CuentaResponsable7"},
+                {association:"CuentaEstado8"},{association:"CuentaEtapa8"},{association:"CuentaResponsable8"}
+            ]*/
+        })
+        .then((resultados)=>{
+            res.send("funciona");
+            console.log(req.body);
+
+        })
+        /*let pedido_alta = db.tipo_alta.findAll();
         let pedido_distribuidor = db.distribuidor.findAll();
         
 
@@ -23,18 +42,18 @@ let controlador_general = {
                 res.render("equipo_encontrado",{tipos_alta,distribuidores});
             });
 
-            console.log(req.body);
+            console.log(req.body);*/
     },
     guardar_inicio:(req,res)=>{
         console.log(req.body);
         db.Cuenta.create({
-            fecha_ingreso_mail:req.body.fecha_mail,
-            pos_sunmi:req.body.numero_pos,
-            id_tipo_alta:req.body.tipo_alta,
-            id_distribuidor:req.body.distribuidor,
-            distribuidor_nuevo:req.body.distribuidor_nuevo,
-            numero_cuenta:req.body.numero_cuenta,
-            busqueda_x_id:req.body.numero_pos
+            fecha_ingreso_mail:"fecha: " + req.body.fecha_mail,
+            pos_sunmi:"nr_pos: " + req.body.numero_pos,
+            CuentaTipoAltaId:"tipo alta: " + req.body.tipo_alta,
+            CuentaDistribuidorId:"distribuidor: " + req.body.distribuidor,
+            distribuidor_nuevo:"distribuidor nuevo: " + req.body.distribuidor_nuevo,
+            numero_cuenta:"numero_cuenta: " + req.body.numero_cuenta,
+            busqueda_x_id:"busqueda id: " + req.body.numero_pos + req.body.numero_cuenta
         }).
         then((resultados)=>{
             console.log(req.body)

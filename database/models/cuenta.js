@@ -5,12 +5,12 @@ function cuenta_data(sequelize,DataTypes){
         id:{type:DataTypes.INTEGER,primaryKey:true,autoIncrement:true,allowNull:false},
         fecha_ingreso_mail:{type:DataTypes.DATE,allowNull:false},
         pos_sunmi:{type:DataTypes.STRING(50),allowNull:false},
-        id_tipo_alta:{type:DataTypes.INTEGER,allowNull:false},
-        id_distribuidor:{type:DataTypes.INTEGER},
+        /*id_tipo_alta:{type:DataTypes.INTEGER,allowNull:false},
+        id_distribuidor:{type:DataTypes.INTEGER},*/
         distribuidor_nuevo:{type:DataTypes.STRING(50)},
         numero_cuenta:{type:DataTypes.STRING(50)},
         busqueda_x_id:{type:DataTypes.STRING(50)},
-        id_etapa_1:{type:DataTypes.INTEGER},
+        /*id_etapa_1:{type:DataTypes.INTEGER},
         id_estado_1:{type:DataTypes.INTEGER},
         id_responsable_1:{type:DataTypes.INTEGER},
         id_etapa_2:{type:DataTypes.INTEGER},
@@ -33,7 +33,7 @@ function cuenta_data(sequelize,DataTypes){
         id_responsable_7:{type:DataTypes.INTEGER},
         id_etapa_8:{type:DataTypes.INTEGER},
         id_estado_8:{type:DataTypes.INTEGER},
-        id_responsable_8:{type:DataTypes.INTEGER}
+        id_responsable_8:{type:DataTypes.INTEGER}*/
     };
 
     let config = {timestamps:false};
@@ -42,108 +42,108 @@ function cuenta_data(sequelize,DataTypes){
 
     Cuenta.associate = (modelos)=>{
         Cuenta.belongsTo(modelos.Distribuidor,{
-            as:"Cuenta_distribuidor",
-            foreingKey:"id_distribuidor"
+            as:"CuentaDistribuidor",
+            foreingKey:"CuentaDistribuidorId"
         }),
         Cuenta.belongsTo(modelos.Tipo_alta,{
-            as:"Cuenta_tipo_alta",
-            foreingKey:"id_tipo_alta"
+            as:"CuentaTipoAlta",
+            foreingKey:"CuentaTipoAltaId"
         }),
         Cuenta.belongsTo(modelos.Estado,{
-            as:"Cuenta_estado_1",
-            foreingKey:"id_estado_1"
+            as:"CuentaEstado1",
+            foreingKey:"CuentaEstado1Id"
         }),
         Cuenta.belongsTo(modelos.Etapa,{
-            as:"Cuenta_etapa_1",
-            foreingKey:"id_etapa_1"
+            as:"CuentaEtapa1",
+            foreingKey:"CuentaEtapa1Id"
         }),
         Cuenta.belongsTo(modelos.Responsable,{
-            as:"Cuenta_responsable_1",
-            foreingKey:"id_responsable_1"
+            as:"CuentaResponsable1",
+            foreingKey:"CuentaResponsable1Id"
         }),
         Cuenta.belongsTo(modelos.Estado,{
-            as:"Cuenta_estado_2",
-            foreingKey:"id_estado_2"
+            as:"CuentaEstado2",
+            foreingKey:"CuentaEstado2Id"
         }),
         Cuenta.belongsTo(modelos.Etapa,{
-            as:"Cuenta_etapa_2",
-            foreingKey:"id_etapa_2"
+            as:"CuentaEtapa2",
+            foreingKey:"CuentaEtapa2Id"
         }),
         Cuenta.belongsTo(modelos.Responsable,{
-            as:"Cuenta_responsable_2",
-            foreingKey:"id_responsable_2"
+            as:"CuentaResponsable2",
+            foreingKey:"CuentaResponsable2Id"
         }),
         Cuenta.belongsTo(modelos.Estado,{
-            as:"Cuenta_estado_3",
-            foreingKey:"id_estado_3"
+            as:"CuentaEstado3",
+            foreingKey:"CuentaEstado3Id"
         }),
         Cuenta.belongsTo(modelos.Etapa,{
-            as:"Cuenta_etapa_3",
-            foreingKey:"id_etapa_3"
+            as:"CuentaEtapa3",
+            foreingKey:"CuentaEtapa3Id"
         }),
         Cuenta.belongsTo(modelos.Responsable,{
-            as:"Cuenta_responsable_3",
-            foreingKey:"id_responsable_3"
+            as:"CuentaResponsable3",
+            foreingKey:"CuentaResponsable3Id"
         }),
         Cuenta.belongsTo(modelos.Estado,{
-            as:"Cuenta_estado_4",
-            foreingKey:"id_estado_4"
+            as:"CuentaEstado4",
+            foreingKey:"CuentaEstado4Id"
         }),
         Cuenta.belongsTo(modelos.Etapa,{
-            as:"Cuenta_etapa_4",
-            foreingKey:"id_etapa_4"
+            as:"CuentaEtapa4",
+            foreingKey:"CuentaEtapa4Id"
         }),
         Cuenta.belongsTo(modelos.Responsable,{
-            as:"Cuenta_responsable_4",
-            foreingKey:"id_responsable_4"
+            as:"CuentaResponsable4",
+            foreingKey:"CuentaResponsable4Id"
         }),
         Cuenta.belongsTo(modelos.Estado,{
-            as:"Cuenta_estado_5",
-            foreingKey:"id_estado_5"
+            as:"CuentaEstado5",
+            foreingKey:"CuentaEstado5Id"
         }),
         Cuenta.belongsTo(modelos.Etapa,{
-            as:"Cuenta_etapa_5",
-            foreingKey:"id_etapa_5"
+            as:"CuentaEtapa5",
+            foreingKey:"CuentaEtapa5Id"
         }),
         Cuenta.belongsTo(modelos.Responsable,{
-            as:"Cuenta_responsable_5",
-            foreingKey:"id_responsable_5"
+            as:"CuentaResponsable5",
+            foreingKey:"CuentaResponsable5Id"
         }),
         Cuenta.belongsTo(modelos.Estado,{
-            as:"Cuenta_estado_6",
-            foreingKey:"id_estado_6"
+            as:"CuentaEstado6",
+            foreingKey:"CuentaEstado6"
         }),
         Cuenta.belongsTo(modelos.Etapa,{
-            as:"Cuenta_etapa_6",
-            foreingKey:"id_etapa_6"
+            as:"CuentaEtapa6",
+            foreingKey:"CuentaEtapa6Id"
         }),
         Cuenta.belongsTo(modelos.Responsable,{
-            as:"Cuenta_responsable_6",
-            foreingKey:"id_responsable_6"
+            as:"CuentaResponsable6",
+            foreingKey:"CuentaResponsable6Id"
         }),
         Cuenta.belongsTo(modelos.Estado,{
-            as:"Cuenta_estado_7",
-            foreingKey:"id_estado_7"
+            as:"CuentaEstado7",
+            foreingKey:"CuentaEstado7Id"
         }),
         Cuenta.belongsTo(modelos.Etapa,{
-            as:"Cuenta_etapa_7",
-            foreingKey:"id_etapa_7"
+            as:"CuentaEtapa7",
+            foreingKey:"CuentaEtapa7Id"
         }),
         Cuenta.belongsTo(modelos.Responsable,{
-            as:"Cuenta_responsable_7",
-            foreingKey:"id_responsable_7"
+            as:"CuentaResponsable7",
+            foreingKey:"CuentaResponsable7Id"
         }),
         Cuenta.belongsTo(modelos.Estado,{
-            as:"Cuenta_estado_8",
-            foreingKey:"id_estado_8"
+            as:"CuentaEstado8",
+            foreingKey:"CuentaEstado8Id"
         }),
         Cuenta.belongsTo(modelos.Etapa,{
-            as:"Cuenta_etapa_8",
-            foreingKey:"id_etapa_8"
+            as:"CuentaEtapa8",
+            foreingKey:"CuentaEtapa8Id"
         }),
         Cuenta.belongsTo(modelos.Responsable,{
-            as:"Cuenta_responsable_8",
-            foreingKey:"id_responsable_8"
+            as:"CuentaResponsable8",
+            foreingKey:"CuentaResponsable8Id"
         })
     };
     return Cuenta;

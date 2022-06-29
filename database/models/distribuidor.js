@@ -12,8 +12,8 @@ function distribuidor_data(sequelize,DataTypes){
 
     Distribuidor.associate = (modelos)=>{
         Distribuidor.hasMany(modelos.Cuenta,{
-            as:"Distribuidor_cuenta",
-            foreignKey:"id_distribuidor"
+            as:"DistribuidorCuenta",
+            foreignKey:"CuentaDistribuidorId"
         });
     };
 
