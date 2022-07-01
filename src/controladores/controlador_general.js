@@ -30,17 +30,12 @@ let controlador_general = {
         })
         .then((equipo)=>{
             if(equipo !== null){
-                //res.redirect("/editar/:equipo.busqueda_x_id")
-                res.render("resultado_encontrado",{equipo})
-                //res.redirect("/editar/:req.body.nr_serie + req.body.nr_cuenta");
-                //res.send(equipo.busqueda_x_id)
+                res.render("resultado_encontrado",{equipo});
             }
                 else{
-                    res.send("registro no encontrado");
-                }        
-            //console.log(req.body);
-            //console.log(equipo)
-        })
+                    res.render("no_encontrado");
+                };
+        });
     },
     guardar_inicio:(req,res)=>{
         db.Cuenta.create({
@@ -74,21 +69,18 @@ let controlador_general = {
         res.render("proceso_guardado");
     },
     editar:(req,res)=>{
-        //let pedido_alta = db.Tipo_alta.findAll();
-        //let pedido_distribuidor = db.Distribuidor.findAll();
-
+        let pedido_alta = db.Tipo_alta.findAll();
+        let pedido_distribuidor = db.Distribuidor.findAll();
         db.Cuenta.findOne({
             where:{busqueda_x_id:req.params.busqueda_x_id},
         })
         .then((equipo)=>{
-            //Promise.all([pedido_alta,pedido_distribuidor])
-              //  .then((tipos_alta,distribuidores)=>{
-                    res.render("detalle_equipo")//,{tipos_alta,distribuidores,equipo});
-                    //res.send("vista de edicion")
-                })
-        //});
-        //console.log(equipo)
-        //res.send("editarlo")
+            Promise.all([pedido_alta,pedido_distribuidor])
+                .then(([tipos_alta,distribuidores])=>{
+                    res.render("detalle_equipo",{tipos_alta,distribuidores,equipo});
+                });
+        });
+        
     },
     guardar_editado:(req,res)=>{
         res.send("prueba")

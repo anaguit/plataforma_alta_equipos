@@ -12,14 +12,15 @@
             </div>
             <div class="campos_formulario">
                 <label>Número de pos</label>
-                <input type="text" name="numero_pos">
+                <input type="text" name="numero_pos" value="<%= equipo.pos_sunmi %>">
             </div>
             <div class="campos_formulario">
                 <label>Tipo de alta</label>
                 <select name="tipo_alta">
                     <option value="" >Seleccioná opción</option>
                     <% for(let tipo_alta of tipos_alta) { %>
-                        <option value="<%= tipo_alta.id %>"><%= tipo_alta.tipo %></option>
+                        <option value="<%= tipo_alta.id %>" <%= tipo_alta.id === equipo.CuentaTipoAltaId ? 'selected':'' %>>
+                            <%= tipo_alta.tipo %></option>
                         <% } %>
                 </select>
             </div>
@@ -28,17 +29,18 @@
                 <select name="distribuidor">
                     <option value="">Seleccioná distribuidor</option>
                     <% for(let distribuidor of distribuidores){ %> 
-                        <option value="<%= distribuidor.id %>"><%= distribuidor.nombre %></option>
+                        <option value="<%= distribuidor.id %>" <%= distribuidor.id === equipo.CuentaDistribuidorId ? 'selected' : ''%>>
+                            <%= distribuidor.nombre %></option>
                     <% } %>
                 </select>
             </div>
             <div class="campos_formulario">
                 <label>Distribuidor nuevo</label>
-                <input type="text" name="distribuidor_nuevo">
+                <input type="text" name="distribuidor_nuevo" value="<%= equipo.distribuidor_nuevo %>">
             </div>
             <div class="campos_formulario">
                 <label>Numero de cuenta</label>
-                <input type="text" name="numero_cuenta">
+                <input type="text" name="numero_cuenta" value="<%= equipo.numero_cuenta %>">
             </div>
             <div class="botones_formulario">
                 <button type="submit">Editar</button>
