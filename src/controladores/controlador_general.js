@@ -83,7 +83,20 @@ let controlador_general = {
         
     },
     guardar_editado:(req,res)=>{
-        res.send("prueba")
+        db.Cuenta.update({
+            fecha_ingreso_mail:req.body.fecha_mail,
+            pos_sunmi:req.body.numero_pos,
+            CuentaTipoAltaId:req.body.tipo_alta,
+            CuentaDistribuidorId:req.body.distribuidor,
+            distribuidor_nuevo:req.body.distribuidor_nuevo,
+            numero_cuenta:req.body.numero_cuenta,
+            busqueda_x_id:req.body.nr_serie + req.body.nr_cuenta
+        },{
+            where:{busqueda_x_id:req.params.busqueda_x_id} //como hacer llegar por parametros la info a editar,
+        })                                                 // error: valor indefinido
+        .then((resultados)=>{
+            res.render("proceso_guardado")
+        })
     }
 };
 
