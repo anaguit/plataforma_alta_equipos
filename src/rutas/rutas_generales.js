@@ -13,7 +13,7 @@ router.post("/procesos",controlador_general.guardar_proceso);
 router.get("/proceso_guardado",controlador_general.proceso_guardado);
 
 router.get("/editar/:busqueda_x_id",controlador_general.editar);
-router.put("/guardar_editado",controlador_general.guardar_editado);
+router.put("/guardar_editado/:busqueda_x_id",controlador_general.guardar_editado);
 
 
 module.exports = router;

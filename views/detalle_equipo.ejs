@@ -5,7 +5,7 @@
     <%- include("./parciales/header") %>
     <main>
         <h3>Equipo PBX</h3>
-        <form action="/guardar_editado?_method=PUT" method="POST">
+        <form action="/guardar_editado/<%= equipo.busqueda_x_id %>?_method=PUT" method="POST">
             <div class="campos_formulario">
                 <label>Fecha de ingreso del mail</label>
                 <input type="date" name="fecha_mail">
