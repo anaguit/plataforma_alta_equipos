@@ -15,7 +15,7 @@ let controlador_general = {
     },
     resultado_busqueda:(req,res)=>{
         console.log(req.body);
-        let pedido_cuenta = db.Cuenta.findOne({
+        db.Cuenta.findOne({
             where:{busqueda_x_id:req.body.nr_serie + req.body.nr_cuenta},
             /*include:[{association:"CuentaDistribuidor"},{association:"CuentaTipoAlta"},
                 {association:"CuentaEstado1"},{association:"CuentaEtapa1"},{association:"CuentaResponsable1"},
@@ -30,17 +30,19 @@ let controlador_general = {
         })
         .then((equipo)=>{
             if(equipo !== null){
-                res.render("equipo_encontrado",{equipo});
+                //res.redirect("/editar/:equipo.busqueda_x_id")
+                res.render("resultado_encontrado",{equipo})
+                //res.redirect("/editar/:req.body.nr_serie + req.body.nr_cuenta");
+                //res.send(equipo.busqueda_x_id)
             }
                 else{
                     res.send("registro no encontrado");
                 }        
-            console.log(req.body);
-            console.log(equipo)
+            //console.log(req.body);
+            //console.log(equipo)
         })
     },
     guardar_inicio:(req,res)=>{
-        //console.log(req.body);
         db.Cuenta.create({
             fecha_ingreso_mail: req.body.fecha_mail,
             pos_sunmi: req.body.numero_pos,
@@ -51,12 +53,8 @@ let controlador_general = {
             busqueda_x_id: req.body.numero_pos + req.body.numero_cuenta
         }).
         then((resultados)=>{
-            console.log(req.body)
             res.redirect("/procesos");
-        })/*
-        .catch((error)=>{
-            res.send("error")
-        })*/
+        })
     },
     procesos:(req,res)=>{
 
@@ -75,15 +73,23 @@ let controlador_general = {
     proceso_guardado:(req,res)=>{
         res.render("proceso_guardado");
     },
-    /*editar:(req,res)=>{
-        let pedido_alta = db.tipo_alta.findAll();
-        let pedido_distribuidor = db.distribuidor.findAll();
+    editar:(req,res)=>{
+        //let pedido_alta = db.Tipo_alta.findAll();
+        //let pedido_distribuidor = db.Distribuidor.findAll();
 
-        Promise.all([pedido_alta,pedido_distribuidor])
-            .then(([tipos_alta,distribuidores])=>{
-                res.render("equipo_encontrado",{tipos_alta,distribuidores});
-            });
-    },*/
+        db.Cuenta.findOne({
+            where:{busqueda_x_id:req.params.busqueda_x_id},
+        })
+        .then((equipo)=>{
+            //Promise.all([pedido_alta,pedido_distribuidor])
+              //  .then((tipos_alta,distribuidores)=>{
+                    res.render("detalle_equipo")//,{tipos_alta,distribuidores,equipo});
+                    //res.send("vista de edicion")
+                })
+        //});
+        //console.log(equipo)
+        //res.send("editarlo")
+    },
     guardar_editado:(req,res)=>{
         res.send("prueba")
     }
