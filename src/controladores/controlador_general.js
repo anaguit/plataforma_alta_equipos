@@ -28,32 +28,27 @@ let controlador_general = {
                 {association:"CuentaEstado8"},{association:"CuentaEtapa8"},{association:"CuentaResponsable8"}
             ]*/
         })
-        .then((resultados)=>{
-            res.send("funciona");
+        .then((equipo)=>{
+            if(equipo !== null){
+                res.render("equipo_encontrado",{equipo});
+            }
+                else{
+                    res.send("registro no encontrado");
+                }        
             console.log(req.body);
-
+            console.log(equipo)
         })
-        /*let pedido_alta = db.tipo_alta.findAll();
-        let pedido_distribuidor = db.distribuidor.findAll();
-        
-
-        Promise.all([pedido_alta,pedido_distribuidor])
-            .then(([tipos_alta,distribuidores])=>{
-                res.render("equipo_encontrado",{tipos_alta,distribuidores});
-            });
-
-            console.log(req.body);*/
     },
     guardar_inicio:(req,res)=>{
-        console.log(req.body);
+        //console.log(req.body);
         db.Cuenta.create({
-            fecha_ingreso_mail:"fecha: " + req.body.fecha_mail,
-            pos_sunmi:"nr_pos: " + req.body.numero_pos,
-            CuentaTipoAltaId:"tipo alta: " + req.body.tipo_alta,
-            CuentaDistribuidorId:"distribuidor: " + req.body.distribuidor,
-            distribuidor_nuevo:"distribuidor nuevo: " + req.body.distribuidor_nuevo,
-            numero_cuenta:"numero_cuenta: " + req.body.numero_cuenta,
-            busqueda_x_id:"busqueda id: " + req.body.numero_pos + req.body.numero_cuenta
+            fecha_ingreso_mail: req.body.fecha_mail,
+            pos_sunmi: req.body.numero_pos,
+            CuentaTipoAltaId: req.body.tipo_alta,
+            CuentaDistribuidorId: req.body.distribuidor,
+            distribuidor_nuevo: req.body.distribuidor_nuevo,
+            numero_cuenta: req.body.numero_cuenta,
+            busqueda_x_id: req.body.numero_pos + req.body.numero_cuenta
         }).
         then((resultados)=>{
             console.log(req.body)
@@ -65,9 +60,9 @@ let controlador_general = {
     },
     procesos:(req,res)=>{
 
-        let pedido_proceso = db.etapa.findAll();
-        let pedido_estado = db.estado.findAll();
-        let pedido_responsable = db.responsable.findAll();
+        let pedido_proceso = db.Etapa.findAll();
+        let pedido_estado = db.Estado.findAll();
+        let pedido_responsable = db.Responsable.findAll();
 
         Promise.all([pedido_proceso,pedido_estado,pedido_responsable])
         .then(([procesos,estados,responsables])=>{

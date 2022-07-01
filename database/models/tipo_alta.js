@@ -6,7 +6,10 @@ function tipo_alta_data(sequelize,DataTypes){
         tipo:{type:DataTypes.STRING(50),allowNull:false}
     };
 
-    let config = {timestamps:false};
+    let config = {
+        tableName:"tipo_alta",
+        timestamps:false
+    };
 
     let Tipo_alta = sequelize.define(alias,cols,config);
 
