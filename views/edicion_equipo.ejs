@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./parciales/head") %>
+<body>
+    <%- include("./parciales/header") %>
+    <main>
+        <h3>Equipo <%= equipo.pos_sunmi %></h3>
+        <form action="/guardar_editado/<%= equipo.busqueda_x_id %>?_method=PUT" method="POST">
+            <div class="campos_formulario">
+                <label>Fecha de ingreso del mail</label>
+                <input type="date" name="fecha_mail" value="<%= equipo.fecha_ingreso_mail %>">
+            </div>
+            <div class="campos_formulario">
+                <label>Hora de ingreso del mail</label>
+                <input type="time" name="hora_mail" value="<%= equipo.hora_ingreso_mail %>">
+            </div>
+            <div class="campos_formulario">
+                <label>Número de pos</label>
+                <input type="text" name="numero_pos" value="<%= equipo.pos_sunmi %>">
+            </div>
+            <div class="campos_formulario">
+                <label>Tipo de alta</label>
+                <select name="tipo_alta">
+                    <option value="" >Seleccioná opción</option>
+                    <% for(let tipo_alta of tipos_alta) { %>
+                        <option value="<%= tipo_alta.id %>" <%= tipo_alta.id === equipo.CuentaTipoAltaId ? 'selected':'' %>>
+                            <%= tipo_alta.tipo %></option>
+                        <% } %>
+                </select>
+            </div>
+            <div class="campos_formulario">
+                <label>Distribuidor</label>
+                <select name="distribuidor">
+                    <option value="">Seleccioná distribuidor</option>
+                    <% for(let distribuidor of distribuidores){ %> 
+                        <option value="<%= distribuidor.id %>" <%= distribuidor.id === equipo.CuentaDistribuidorId ? 'selected' : ''%>>
+                            <%= distribuidor.nombre %></option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="campos_formulario">
+                <label>Distribuidor nuevo</label>
+                <input type="text" name="distribuidor_nuevo" value="<%= equipo.distribuidor_nuevo %>">
+            </div>
+            <div class="campos_formulario">
+                <label>Numero de cuenta</label>
+                <input type="text" name="numero_cuenta" value="<%= equipo.numero_cuenta %>">
+            </div>
+            <div class="botones_formulario">
+                <button type="submit">Guardar</button>
+                <button type="reset">Cancelar</button>
+            </div>
+        </form>
+    </main>
+    <%- include("./parciales/footer") %>
+</body>
+</html>

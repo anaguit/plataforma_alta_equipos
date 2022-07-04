@@ -30,7 +30,7 @@ let controlador_general = {
         })
         .then((equipo)=>{
             if(equipo !== null){
-                res.render("resultado_encontrado",{equipo});
+                res.render("detalle_equipo",{equipo});
             }
                 else{
                     res.render("no_encontrado");
@@ -79,7 +79,7 @@ let controlador_general = {
         .then((equipo)=>{
             Promise.all([pedido_alta,pedido_distribuidor])
                 .then(([tipos_alta,distribuidores])=>{
-                    res.render("detalle_equipo",{tipos_alta,distribuidores,equipo});
+                    res.render("edicion_equipo",{tipos_alta,distribuidores,equipo});
                 });
         });
         
@@ -97,9 +97,8 @@ let controlador_general = {
         },{
             where:{busqueda_x_id:req.params.busqueda_x_id} 
         })                                                
-        .then((resultados)=>{
-            //res.render("proceso_guardado");
-            res.send([req.params,req.body])
+        .then((equipo)=>{
+            res.render("editado_exitoso");
         })
     }
 };
