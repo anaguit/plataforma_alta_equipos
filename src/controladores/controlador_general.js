@@ -49,9 +49,15 @@ let controlador_general = {
             numero_cuenta: req.body.numero_cuenta,
             busqueda_x_id: req.body.numero_pos + req.body.numero_cuenta
         }).
-        then((resultados)=>{
-            res.redirect("/procesos");
-        })
+        then((resultado)=>{
+            db.Cuenta.findOne({
+                where:{busqueda_x_id: req.body.numero_pos + req.body.numero_cuenta}
+            })
+            .then((equipo)=>{
+                res.send(equipo)
+                //res.redirect("/procesos/:busqueda_x_id");
+            });
+        });
     },
     procesos:(req,res)=>{
 
@@ -97,9 +103,14 @@ let controlador_general = {
         },{
             where:{busqueda_x_id:req.params.busqueda_x_id} 
         })                                                
-        .then((equipo)=>{
-            res.render("editado_exitoso");
-        })
+        .then((resultado)=>{
+            db.Cuenta.findOne({
+                where:{busqueda_x_id:req.body.numero_pos + req.body.numero_cuenta}
+            })
+            .then((equipo)=>{
+                res.render("editado_exitoso",{equipo})
+            });
+        });
     }
 };
 

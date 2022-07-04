@@ -4,7 +4,6 @@
 <body>
     <%- include("./parciales/header") %>
     <main>
-        <!-- detalle del producto no hacer formulario, el formulario está cuando con a lo lleva a la vista de edición -->
         <h3>Numero de pos: <%=equipo.pos_sunmi %></h3>
         <h3>Numero de cuenta: <%= equipo.numero_cuenta %></h3>
         <h3>Fecha de ingreso del mail: <%= equipo.fecha_ingreso_mail %></h3>
@@ -13,7 +12,7 @@
         <h3>Distribuidor nuevo: <%= equipo.distribuidor_nuevo %></h3>
         <h3>Distribuidor: <%= equipo.CuentaDistribuidor.nombre %></h3>
         <a href="/editar/<%= equipo.busqueda_x_id %>"><button>Editar</button></a>
-        <a href="/procesos"><button>Cargar nuevo proceso</button></a>
+        <a href="/procesos/<%= equipo.busqueda_x_id %>"><button>Cargar nuevo proceso</button></a>
     </main>
     <%- include("./parciales/footer") %>
 </body>
