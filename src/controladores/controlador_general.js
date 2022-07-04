@@ -17,7 +17,7 @@ let controlador_general = {
         console.log(req.body);
         db.Cuenta.findOne({
             where:{busqueda_x_id:req.body.nr_serie + req.body.nr_cuenta},
-            /*include:[{association:"CuentaDistribuidor"},{association:"CuentaTipoAlta"},
+            include:[{association:"CuentaDistribuidor"},{association:"CuentaTipoAlta"}/*,
                 {association:"CuentaEstado1"},{association:"CuentaEtapa1"},{association:"CuentaResponsable1"},
                 {association:"CuentaEstado2"},{association:"CuentaEtapa2"},{association:"CuentaResponsable2"},
                 {association:"CuentaEstado3"},{association:"CuentaEtapa3"},{association:"CuentaResponsable3"},
@@ -26,7 +26,7 @@ let controlador_general = {
                 {association:"CuentaEstado6"},{association:"CuentaEtapa6"},{association:"CuentaResponsable6"},
                 {association:"CuentaEstado7"},{association:"CuentaEtapa7"},{association:"CuentaResponsable7"},
                 {association:"CuentaEstado8"},{association:"CuentaEtapa8"},{association:"CuentaResponsable8"}
-            ]*/
+            */]
         })
         .then((equipo)=>{
             if(equipo !== null){
