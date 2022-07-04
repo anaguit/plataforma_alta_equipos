@@ -4,6 +4,7 @@ function cuenta_data(sequelize,DataTypes){
     let cols = {
         id:{type:DataTypes.INTEGER,primaryKey:true,autoIncrement:true,allowNull:false},
         fecha_ingreso_mail:{type:DataTypes.DATE,allowNull:false},
+        hora_ingreso_mail:{type:DataTypes.TIME, allowNull:false},
         pos_sunmi:{type:DataTypes.STRING(50),allowNull:false},
         distribuidor_nuevo:{type:DataTypes.STRING(50)},
         numero_cuenta:{type:DataTypes.STRING(50)},

@@ -38,8 +38,10 @@ let controlador_general = {
         });
     },
     guardar_inicio:(req,res)=>{
+        console.log(req.body)
         db.Cuenta.create({
             fecha_ingreso_mail: req.body.fecha_mail,
+            hora_ingreso_mail: req.body.hora_mail,
             pos_sunmi: req.body.numero_pos,
             CuentaTipoAltaId: req.body.tipo_alta,
             CuentaDistribuidorId: req.body.distribuidor,
@@ -85,17 +87,19 @@ let controlador_general = {
     guardar_editado:(req,res)=>{
         db.Cuenta.update({
             fecha_ingreso_mail:req.body.fecha_mail,
+            hora_ingreso_mail:req.body.hora_mail,
             pos_sunmi:req.body.numero_pos,
             CuentaTipoAltaId:req.body.tipo_alta,
             CuentaDistribuidorId:req.body.distribuidor,
             distribuidor_nuevo:req.body.distribuidor_nuevo,
             numero_cuenta:req.body.numero_cuenta,
-            busqueda_x_id:req.body.nr_serie + req.body.nr_cuenta
+            busqueda_x_id:req.body.numero_pos + req.body.numero_cuenta 
         },{
-            where:{busqueda_x_id:req.params.busqueda_x_id} //como hacer llegar por parametros la info a editar,
-        })                                                 // error: valor indefinido
+            where:{busqueda_x_id:req.params.busqueda_x_id} 
+        })                                                
         .then((resultados)=>{
-            res.render("proceso_guardado")
+            //res.render("proceso_guardado");
+            res.send([req.params,req.body])
         })
     }
 };

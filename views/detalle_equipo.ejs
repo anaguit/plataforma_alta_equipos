@@ -4,11 +4,15 @@
 <body>
     <%- include("./parciales/header") %>
     <main>
-        <h3>Equipo PBX</h3>
+        <h3>Equipo <%= equipo.pos_sunmi %></h3>
         <form action="/guardar_editado/<%= equipo.busqueda_x_id %>?_method=PUT" method="POST">
             <div class="campos_formulario">
                 <label>Fecha de ingreso del mail</label>
-                <input type="date" name="fecha_mail">
+                <input type="date" name="fecha_mail" value="<%= equipo.fecha_ingreso_mail %>">
+            </div>
+            <div class="campos_formulario">
+                <label>Hora de ingreso del mail</label>
+                <input type="time" name="hora_mail" value="<%= equipo.hora_ingreso_mail %>">
             </div>
             <div class="campos_formulario">
                 <label>Número de pos</label>
@@ -47,6 +51,7 @@
                 <button type="reset">Borrar</button>
             </div>
         </form>
+        <a href="/procesos"><button>Cargar nuevo proceso</button></a>
     </main>
     <%- include("./parciales/footer") %>
 </body>
