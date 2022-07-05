@@ -9,8 +9,8 @@ router.post("/guardar",controlador_general.guardar_inicio); //ok
 router.post("/resultados",controlador_general.resultado_busqueda); //ok
 
 router.get("/procesos/:busqueda_x_id",controlador_general.procesos); //ok
-router.post("/procesos/:busqueda_x_id",controlador_general.guardar_proceso);
-router.get("/proceso_guardado",controlador_general.proceso_guardado);
+router.post("/procesos",controlador_general.guardar_proceso);
+//router.get("/proceso_guardado",controlador_general.proceso_guardado);
 
 router.get("/editar/:busqueda_x_id",controlador_general.editar); //ok
 router.put("/guardar_editado/:busqueda_x_id",controlador_general.guardar_editado); //ok

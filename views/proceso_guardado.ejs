@@ -5,7 +5,7 @@
     <%- include("./parciales/header") %>
     <main>
         <h3>Proceso guardado</h3>
-        <a href="/procesos"><button>Cargar nuevo proceso</button></a> <!-- modificar la ruta a parametrizada -->
+        <a href="/procesos/<%= equipo.busqueda_x_id %>"><button>Cargar nuevo proceso</button></a> <!-- modificar la ruta a parametrizada -->
         <a href="/"><button>Finalizar</button></a>
     </main>
     <%- include("./parciales/footer") %>

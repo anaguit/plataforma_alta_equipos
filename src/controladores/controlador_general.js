@@ -70,6 +70,7 @@ let controlador_general = {
         .then(([procesos,estados,responsables,cuenta])=>{
             res.render("procesos",{procesos,estados,responsables,cuenta});
         });
+        //res.send(req.params)
     },
     guardar_proceso:(req,res)=>{
         if(req.body.proceso == 1){
@@ -78,15 +79,16 @@ let controlador_general = {
                 CuentaEstado1Id:req.body.estado,
                 CuentaResponsable1Id:req.body.responsable
             },{
-                where:{busqueda_x_id:req.params.busqueda_x_id}
+                where:{busqueda_x_id:req.body.busqueda_x_id}
             })
             .then((resultados)=>{
-                db.Cuenta.findOne(
-                    {where:{busqueda_x_id:req.params.busqueda_x_id}})
+                db.Cuenta.findOne({
+                    where:{busqueda_x_id:req.body.busqueda_x_id}
+                })
+                .then((equipo)=>{
+                    res.render("proceso_guardado",{equipo});
+                }) 
             })
-            .then((equipo)=>{
-                res.render("proceso_guardado",{equipo});
-                });   
         }
             else if(req.body.proceso == 2){
                 db.Cuenta.update({

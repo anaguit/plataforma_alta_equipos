@@ -4,8 +4,13 @@
 <body>
     <%- include("./parciales/header") %>
     <main>
+        <!-- <h1><%= cuenta.busqueda_x_id %></h1> -->
         <h3>Agregar nuevo proceso</h3>
-        <form action="/procesos" method="POST">
+        <form action="/procesos" method="POST"> <!-- cambié la ruta de post-->
+            <div class="campos_formulario">
+                <label>Ocultar input</label>
+                <input type="text" name="busqueda_x_id" value="<%= cuenta.busqueda_x_id %>">
+            </div>
             <div class="campos_formulario">
                 <label>Proceso</label>
                 <select name="proceso">
