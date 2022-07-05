@@ -62,23 +62,120 @@ let controlador_general = {
         let pedido_proceso = db.Etapa.findAll();
         let pedido_estado = db.Estado.findAll();
         let pedido_responsable = db.Responsable.findAll();
+        let pedido_cuenta = db.Cuenta.findOne({
+            where:{busqueda_x_id:req.params.busqueda_x_id}
+        })
 
-        Promise.all([pedido_proceso,pedido_estado,pedido_responsable])
-        .then(([procesos,estados,responsables])=>{
-            res.render("procesos",{procesos,estados,responsables});
+        Promise.all([pedido_proceso,pedido_estado,pedido_responsable,pedido_cuenta])
+        .then(([procesos,estados,responsables,cuenta])=>{
+            res.render("procesos",{procesos,estados,responsables,cuenta});
         });
     },
     guardar_proceso:(req,res)=>{
-        db.Cuenta.update({
-
-        },{
-            where:{busqueda_x_id:req.params.busqueda_x_id}
-        })
-        res.redirect("/proceso_guardado");
-    },
+        if(req.body.proceso == 1){
+            db.Cuenta.update({
+                CuentaEtapa1Id:req.body.proceso,
+                CuentaEstado1Id:req.body.estado,
+                CuentaResponsable1Id:req.body.responsable
+            },{
+                where:{busqueda_x_id:req.params.busqueda_x_id}
+            })
+            .then((resultados)=>{
+                db.Cuenta.findOne(
+                    {where:{busqueda_x_id:req.params.busqueda_x_id}})
+            })
+            .then((equipo)=>{
+                res.render("proceso_guardado",{equipo});
+                });   
+        }
+            else if(req.body.proceso == 2){
+                db.Cuenta.update({
+                    CuentaEtapa2Id:req.body.proceso,
+                    CuentaEstado2Id:req.body.estado,
+                    CuentaResponsable2Id:req.body.responsable
+                },{
+                    where:{busqueda_x_id:req.params.busqueda_x_id}
+                })
+                .then((resultados)=>{
+                    res.render("proceso_guardado");
+                    });
+            }
+                else if(req.body.proceso == 3){
+                    db.Cuenta.update({
+                        CuentaEtapa3Id:req.body.proceso,
+                        CuentaEstado3Id:req.body.estado,
+                        CuentaResponsable3Id:req.body.responsable
+                    },{
+                        where:{busqueda_x_id:req.params.busqueda_x_id}
+                    })
+                    .then((resultados)=>{
+                        res.render("proceso_guardado");
+                        });
+                }
+                    else if(req.body.proceso == 4){
+                        db.Cuenta.update({
+                            CuentaEtapa4Id:req.body.proceso,
+                            CuentaEstado4Id:req.body.estado,
+                            CuentaResponsable4Id:req.body.responsable
+                        },{
+                            where:{busqueda_x_id:req.params.busqueda_x_id}
+                        })
+                        .then((resultados)=>{
+                            res.render("proceso_guardado");
+                            });
+                    }
+                        else if(req.body.proceso == 5){
+                            db.Cuenta.update({
+                                CuentaEtapa5Id:req.body.proceso,
+                                CuentaEstado5Id:req.body.estado,
+                                CuentaResponsable5Id:req.body.responsable
+                            },{
+                                where:{busqueda_x_id:req.params.busqueda_x_id}
+                            })
+                            .then((resultados)=>{
+                                res.render("proceso_guardado");
+                                });
+                        }
+                            else if(req.body.proceso == 6){
+                                db.Cuenta.update({
+                                    CuentaEtapa6Id:req.body.proceso,
+                                    CuentaEstado6Id:req.body.estado,
+                                    CuentaResponsable6Id:req.body.responsable
+                                },{
+                                    where:{busqueda_x_id:req.params.busqueda_x_id}
+                                })
+                                .then((resultados)=>{
+                                    res.render("proceso_guardado");
+                                });
+                            }
+                                else if(req.body.proceso == 7){
+                                    db.Cuenta.update({
+                                        CuentaEtapa7Id:req.body.proceso,
+                                        CuentaEstado7Id:req.body.estado,
+                                        CuentaResponsable7Id:req.body.responsable
+                                    },{
+                                        where:{busqueda_x_id:req.params.busqueda_x_id}
+                                    })
+                                    .then((resultados)=>{
+                                        res.render("proceso_guardado");
+                                        });
+                                }
+                                    else{
+                                        db.Cuenta.update({
+                                            CuentaEtapa8Id:req.body.proceso,
+                                            CuentaEstado8Id:req.body.estado,
+                                            CuentaRespoonsable8Id:req.body.responsable
+                                        },{
+                                            where:{busqueda_x_id:req.params.busqueda_x_id}
+                                        })
+                                        .then((resultados)=>{
+                                            res.render("proceso_guardado");
+                                        });
+                                    };
+    }/*,
     proceso_guardado:(req,res)=>{
         res.render("proceso_guardado");
-    },
+    }*/,
     editar:(req,res)=>{
         let pedido_alta = db.Tipo_alta.findAll();
         let pedido_distribuidor = db.Distribuidor.findAll();
