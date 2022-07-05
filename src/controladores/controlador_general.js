@@ -69,6 +69,11 @@ let controlador_general = {
         });
     },
     guardar_proceso:(req,res)=>{
+        db.Cuenta.update({
+
+        },{
+            where:{busqueda_x_id:req.params.busqueda_x_id}
+        })
         res.redirect("/proceso_guardado");
     },
     proceso_guardado:(req,res)=>{
