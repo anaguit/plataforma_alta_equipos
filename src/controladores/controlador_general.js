@@ -43,7 +43,13 @@ let controlador_general = {
             });
         }
         else{
-            res.send(errores)
+            let pedido_alta = db.Tipo_alta.findAll();
+            let pedido_distribuidor = db.Distribuidor.findAll();
+
+            Promise.all([pedido_alta,pedido_distribuidor])
+                .then(([tipos_alta,distribuidores])=>{
+                    res.render("inicio",{errores:errores.mapped(),tipos_alta,distribuidores})
+                });
         };        
     },
     guardar_inicio:(req,res)=>{

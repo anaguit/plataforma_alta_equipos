@@ -5,8 +5,10 @@
     <%- include("./parciales/header") %>
     <main>
         <form action="/resultados" method="POST">
+            <p style="color:red"><%= locals.errores && errores.nr_serie ? errores.nr_serie.msg : "" %></p>
             <label>Número de pos</label>
             <input type="text" name="nr_serie">
+            <P style="color:red"><%= locals.errores && errores.nr_cuenta ? errores.nr_cuenta.msg : "" %></P>
             <label>Número de cuenta</label>
             <input type="text" name="nr_cuenta">
             <button type="submit">Buscar</button>
