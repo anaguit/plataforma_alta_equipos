@@ -1,10 +1,12 @@
 let express = require("express");
 let router = express.Router();
 
+let validaciones_formulario_crear = require("../validaciones/validacion_crear");
+
 let controlador_general = require("../controladores/controlador_general");
 
 router.get("/",controlador_general.inicio); //ok
-router.post("/guardar",controlador_general.guardar_inicio); //ok
+router.post("/guardar",validaciones_formulario_crear,controlador_general.guardar_inicio); //ok
 
 router.post("/resultados",controlador_general.resultado_busqueda); //ok
 
