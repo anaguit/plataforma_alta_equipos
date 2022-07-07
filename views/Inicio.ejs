@@ -15,18 +15,22 @@
 
         <form action="/guardar" method="POST">
             <div class="campos_formulario">
+                <p style="color:red"><%= locals.errores && errores.fecha_mail ? errores.fecha_mail.msg: "" %></p>
                 <label>Fecha de ingreso del mail</label>
                 <input type="date" name="fecha_mail">
             </div>
             <div class="campos_formulario">
+                <p style="color:red"><%= locals.errores && errores.hora_mail ? errores.hora_mail.msg : "" %></p>
                 <label>Hora de ingreso del mail</label>
                 <input type="time" name="hora_mail">
             </div>
             <div class="campos_formulario">
+                <p style="color:red"><%= locals.errores && errores.numero_pos ? errores.numero_pos.msg : "" %></p>
                 <label>Número de pos</label>
                 <input type="text" name="numero_pos">
             </div>
             <div class="campos_formulario">
+                <p style="color:red"><%= locals.errores && errores.tipo_alta ? errores.tipo_alta.msg : "" %></p>
                 <label>Tipo de alta</label>
                 <select name="tipo_alta">
                     <option value="">Seleccioná opción</option>
@@ -36,6 +40,7 @@
                 </select>
             </div>
             <div class="campos_formulario">
+                <p style="color:red"><%= locals.errores && errores.distribuidor ? errores.distribuidor.msg : "" %></p>
                 <label>Distribuidor</label>
                 <select name="distribuidor">
                     <option value="">Seleccioná distribuidor</option>
@@ -44,11 +49,12 @@
                     <% } %>
                 </select>
             </div>
-            <div class="campos_formulario">
+            <!-- <div class="campos_formulario">
                 <label>Distribuidor nuevo</label>
                 <input type="text" name="distribuidor_nuevo">
-            </div>
+            </div> -->
             <div class="campos_formulario">
+                <p style="color:red"><%= locals.errores && errores.numero_cuenta ? errores.numero_cuenta.msg : "" %></p>
                 <label>Numero de cuenta</label>
                 <input type="text" name="numero_cuenta">
             </div>

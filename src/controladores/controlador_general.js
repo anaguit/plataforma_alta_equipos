@@ -1,6 +1,9 @@
 let{ sequelize, Sequelize } = require('../../database/models');
 let db = require("../../database/models");
-let Op = db.Sequelize.Op
+let Op = db.Sequelize.Op;
+
+let {validationResult} = require("express-validator");
+
 let controlador_general = {
     inicio:(req,res)=>{
         let pedido_alta = db.Tipo_alta.findAll();
@@ -38,24 +41,36 @@ let controlador_general = {
         });
     },
     guardar_inicio:(req,res)=>{
-        db.Cuenta.create({
-            fecha_ingreso_mail: req.body.fecha_mail,
-            hora_ingreso_mail: req.body.hora_mail,
-            pos_sunmi: req.body.numero_pos,
-            CuentaTipoAltaId: req.body.tipo_alta,
-            CuentaDistribuidorId: req.body.distribuidor,
-            distribuidor_nuevo: req.body.distribuidor_nuevo,
-            numero_cuenta: req.body.numero_cuenta,
-            busqueda_x_id: req.body.numero_pos + req.body.numero_cuenta
-        }).
-        then((resultado)=>{
-            db.Cuenta.findOne({
-                where:{busqueda_x_id: req.body.numero_pos + req.body.numero_cuenta}
-            })
-            .then((equipo)=>{
-                res.render("creado_exitoso",{equipo});
+        let errores = validationResult(req);
+        if(errores.isEmpty()){
+            db.Cuenta.create({
+                fecha_ingreso_mail: req.body.fecha_mail,
+                hora_ingreso_mail: req.body.hora_mail,
+                pos_sunmi: req.body.numero_pos,
+                CuentaTipoAltaId: req.body.tipo_alta,
+                CuentaDistribuidorId: req.body.distribuidor,
+                distribuidor_nuevo: req.body.distribuidor_nuevo,
+                numero_cuenta: req.body.numero_cuenta,
+                busqueda_x_id: req.body.numero_pos + req.body.numero_cuenta
+            }).
+            then((resultado)=>{
+                db.Cuenta.findOne({
+                    where:{busqueda_x_id: req.body.numero_pos + req.body.numero_cuenta}
+                })
+                .then((equipo)=>{
+                    res.render("creado_exitoso",{equipo});
+                });
             });
-        });
+        }
+            else{
+                let pedido_alta = db.Tipo_alta.findAll();
+                let pedido_distribuidor = db.Distribuidor.findAll();
+
+                Promise.all([pedido_alta,pedido_distribuidor])
+                    .then(([tipos_alta,distribuidores])=>{
+                        res.render("inicio",{errores:errores.mapped(),tipos_alta,distribuidores})
+                    });
+            };
     },
     procesos:(req,res)=>{
 
