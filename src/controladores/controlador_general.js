@@ -80,7 +80,7 @@ let controlador_general = {
 
                 Promise.all([pedido_alta,pedido_distribuidor])
                     .then(([tipos_alta,distribuidores])=>{
-                        res.render("inicio",{errores:errores.mapped(),tipos_alta,distribuidores})
+                        res.render("inicio",{errores:errores.mapped(),tipos_alta,distribuidores,datos:req.body})
                     });
             };
     },

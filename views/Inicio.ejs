@@ -19,17 +19,17 @@
             <div class="campos_formulario">
                 <p style="color:red"><%= locals.errores && errores.fecha_mail ? errores.fecha_mail.msg: "" %></p>
                 <label>Fecha de ingreso del mail</label>
-                <input type="date" name="fecha_mail">
+                <input type="date" name="fecha_mail" value="<%= locals.datos && datos.fecha_mail ? datos.fecha_mail : '' %>">
             </div>
             <div class="campos_formulario">
                 <p style="color:red"><%= locals.errores && errores.hora_mail ? errores.hora_mail.msg : "" %></p>
                 <label>Hora de ingreso del mail</label>
-                <input type="time" name="hora_mail">
+                <input type="time" name="hora_mail" value="<%= locals.datos && datos.hora_mail ? datos.hora_mail : '' %>">
             </div>
             <div class="campos_formulario">
                 <p style="color:red"><%= locals.errores && errores.numero_pos ? errores.numero_pos.msg : "" %></p>
                 <label>Número de pos</label>
-                <input type="text" name="numero_pos">
+                <input type="text" name="numero_pos" value="<%= locals.datos && datos.numero_pos ? datos.numero_pos : '' %>">
             </div>
             <div class="campos_formulario">
                 <p style="color:red"><%= locals.errores && errores.tipo_alta ? errores.tipo_alta.msg : "" %></p>
@@ -37,7 +37,7 @@
                 <select name="tipo_alta">
                     <option value="">Seleccioná opción</option>
                     <% for(let tipo_alta of tipos_alta) { %>
-                        <option value="<%= tipo_alta.id %>"><%= tipo_alta.tipo %></option>
+                        <option value="<%= tipo_alta.id %>"<%= locals.datos && (datos.tipo_alta == tipo_alta.id) ? 'selected':null %>><%= tipo_alta.tipo %></option>
                         <% } %>
                 </select>
             </div>
@@ -47,7 +47,7 @@
                 <select name="distribuidor">
                     <option value="">Seleccioná distribuidor</option>
                     <% for(let distribuidor of distribuidores){ %> 
-                        <option value="<%= distribuidor.id %>"><%= distribuidor.nombre %></option>
+                        <option value="<%= distribuidor.id %>"<%= locals.datos && (datos.distribuidor == distribuidor.id) ? 'selected':null %>><%= distribuidor.nombre %></option>
                     <% } %>
                 </select>
             </div>
@@ -58,7 +58,7 @@
             <div class="campos_formulario">
                 <p style="color:red"><%= locals.errores && errores.numero_cuenta ? errores.numero_cuenta.msg : "" %></p>
                 <label>Numero de cuenta</label>
-                <input type="text" name="numero_cuenta">
+                <input type="text" name="numero_cuenta" value="<%= locals.datos && datos.numero_cuenta ? datos.numero_cuenta : '' %>">
             </div>
             
             <div class="botones_formulario">
