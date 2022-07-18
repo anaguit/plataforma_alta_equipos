@@ -16,7 +16,7 @@
                 <select name="proceso">
                     <option value="">Seleccioná etapa</option>
                     <% for(let proceso of procesos) { %>
-                        <option value="<%= proceso.id %>"><%= proceso.etapa %></option>
+                        <option value="<%= proceso.id %>"<%= locals.datos && (datos.proceso == proceso.id) ? 'selected':null %>><%= proceso.etapa %></option>
                     <% } %>
                 </select>
             </div>
@@ -26,7 +26,7 @@
                 <select name="estado">
                     <option value="">seleccioná estado</option>
                     <% for(let estado of estados) { %>
-                        <option value="<%= estado.id %>"><%= estado.estado %></option>
+                        <option value="<%= estado.id %>" <%= locals.datos && (datos.estado == estado.id) ? 'selected':null %>><%= estado.estado %></option>
                     <% } %>
                 </select>
             </div>
@@ -36,7 +36,7 @@
                 <select name="responsable">
                     <option value="">Seleccioná responsable</option>
                     <% for(let responsable of responsables){ %>
-                        <option value="<%= responsable.id %>"><%= responsable.nombre %></option> 
+                        <option value="<%= responsable.id %>"<%= locals.datos && (datos.responsable == responsable.id) ? 'selected':null %>><%= responsable.nombre %></option> 
                     <% } %>
                 </select>
             </div>
