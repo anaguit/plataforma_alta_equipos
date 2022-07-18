@@ -100,40 +100,42 @@ let controlador_general = {
         //res.send(req.params)
     },
     guardar_proceso:(req,res)=>{
-        if(req.body.proceso == 1){
-            db.Cuenta.update({
-                CuentaEtapa1Id:req.body.proceso,
-                CuentaEstado1Id:req.body.estado,
-                CuentaResponsable1Id:req.body.responsable
-            },{
-                where:{busqueda_x_id:req.body.busqueda_x_id}
-            })
-            .then((resultados)=>{
-                db.Cuenta.findOne({
-                    where:{busqueda_x_id:req.body.busqueda_x_id}
-                })
-                .then((equipo)=>{
-                    res.render("proceso_guardado",{equipo});
-                }) 
-            })
-        }
-            else if(req.body.proceso == 2){
+        let errores = validationResult(req);
+        if(errores.isEmpty()){
+            if(req.body.proceso == 1){
                 db.Cuenta.update({
-                    CuentaEtapa2Id:req.body.proceso,
-                    CuentaEstado2Id:req.body.estado,
-                    CuentaResponsable2Id:req.body.responsable
+                    CuentaEtapa1Id:req.body.proceso,
+                    CuentaEstado1Id:req.body.estado,
+                    CuentaResponsable1Id:req.body.responsable
                 },{
                     where:{busqueda_x_id:req.body.busqueda_x_id}
                 })
                 .then((resultados)=>{
                     db.Cuenta.findOne({
                         where:{busqueda_x_id:req.body.busqueda_x_id}
-                        })
-                        .then((equipo)=>{
-                            res.render("proceso_guardado",{equipo})
-                        });
-                    });
+                    })
+                    .then((equipo)=>{
+                        res.render("proceso_guardado",{equipo});
+                    }) 
+                })
             }
+                else if(req.body.proceso == 2){
+                    db.Cuenta.update({
+                        CuentaEtapa2Id:req.body.proceso,
+                        CuentaEstado2Id:req.body.estado,
+                        CuentaResponsable2Id:req.body.responsable
+                    },{
+                        where:{busqueda_x_id:req.body.busqueda_x_id}
+                    })
+                    .then((resultados)=>{
+                        db.Cuenta.findOne({
+                            where:{busqueda_x_id:req.body.busqueda_x_id}
+                            })
+                            .then((equipo)=>{
+                                res.render("proceso_guardado",{equipo})
+                            });
+                        });
+                }
                 else if(req.body.proceso == 3){
                     db.Cuenta.update({
                         CuentaEtapa3Id:req.body.proceso,
@@ -151,11 +153,79 @@ let controlador_general = {
                             });
                         });
                 }
-                    else if(req.body.proceso == 4){
+                else if(req.body.proceso == 4){
+                    db.Cuenta.update({
+                        CuentaEtapa4Id:req.body.proceso,
+                        CuentaEstado4Id:req.body.estado,
+                        CuentaResponsable4Id:req.body.responsable
+                    },{
+                        where:{busqueda_x_id:req.body.busqueda_x_id}
+                    })
+                    .then((resultados)=>{
+                        db.Cuenta.findOne({
+                            where:{busqueda_x_id:req.body.busqueda_x_id}
+                        })
+                        .then((equipo)=>{
+                            res.render("proceso_guardado",{equipo});
+                            });
+                        });
+                }
+                else if(req.body.proceso == 5){
+                    db.Cuenta.update({
+                        CuentaEtapa5Id:req.body.proceso,
+                        CuentaEstado5Id:req.body.estado,
+                        CuentaResponsable5Id:req.body.responsable
+                    },{
+                        where:{busqueda_x_id:req.body.busqueda_x_id}
+                    })
+                    .then((resultados)=>{
+                        db.Cuenta.findOne({
+                            where:{busqueda_x_id:req.body.busqueda_x_id}
+                        })
+                        .then((equipo)=>{
+                            res.render("proceso_guardado",{equipo});
+                            });
+                        });
+                }
+                else if(req.body.proceso == 6){
+                    db.Cuenta.update({
+                        CuentaEtapa6Id:req.body.proceso,
+                        CuentaEstado6Id:req.body.estado,
+                        CuentaResponsable6Id:req.body.responsable
+                    },{
+                        where:{busqueda_x_id:req.body.busqueda_x_id}
+                    })
+                    .then((resultados)=>{
+                        db.Cuenta.findOne({
+                            where:{busqueda_x_id:req.body.busqueda_x_id}
+                        })
+                        .then((equipo)=>{
+                            res.render("proceso_guardado",{equipo});
+                            });
+                        });
+                }
+                else if(req.body.proceso == 7){
+                    db.Cuenta.update({
+                        CuentaEtapa7Id:req.body.proceso,
+                        CuentaEstado7Id:req.body.estado,
+                        CuentaResponsable7Id:req.body.responsable
+                    },{
+                        where:{busqueda_x_id:req.body.busqueda_x_id}
+                    })
+                    .then((resultados)=>{
+                        db.Cuenta.findOne({
+                            where:{busqueda_x_id:req.body.busqueda_x_id}
+                        })
+                        .then((equipo)=>{
+                            res.render("proceso_guardado",{equipo});
+                            });
+                        });
+                }
+                    else{
                         db.Cuenta.update({
-                            CuentaEtapa4Id:req.body.proceso,
-                            CuentaEstado4Id:req.body.estado,
-                            CuentaResponsable4Id:req.body.responsable
+                            CuentaEtapa8Id:req.body.proceso,
+                            CuentaEstado8Id:req.body.estado,
+                            CuentaResponsable8Id:req.body.responsable
                         },{
                             where:{busqueda_x_id:req.body.busqueda_x_id}
                         })
@@ -165,77 +235,23 @@ let controlador_general = {
                             })
                             .then((equipo)=>{
                                 res.render("proceso_guardado",{equipo});
-                                });
                             });
-                    }
-                        else if(req.body.proceso == 5){
-                            db.Cuenta.update({
-                                CuentaEtapa5Id:req.body.proceso,
-                                CuentaEstado5Id:req.body.estado,
-                                CuentaResponsable5Id:req.body.responsable
-                            },{
-                                where:{busqueda_x_id:req.body.busqueda_x_id}
-                            })
-                            .then((resultados)=>{
-                                db.Cuenta.findOne({
-                                    where:{busqueda_x_id:req.body.busqueda_x_id}
-                                })
-                                .then((equipo)=>{
-                                    res.render("proceso_guardado",{equipo});
-                                    });
-                                });
-                        }
-                            else if(req.body.proceso == 6){
-                                db.Cuenta.update({
-                                    CuentaEtapa6Id:req.body.proceso,
-                                    CuentaEstado6Id:req.body.estado,
-                                    CuentaResponsable6Id:req.body.responsable
-                                },{
-                                    where:{busqueda_x_id:req.body.busqueda_x_id}
-                                })
-                                .then((resultados)=>{
-                                    db.Cuenta.findOne({
-                                        where:{busqueda_x_id:req.body.busqueda_x_id}
-                                    })
-                                    .then((equipo)=>{
-                                        res.render("proceso_guardado",{equipo});
-                                        });
-                                    });
-                            }
-                                else if(req.body.proceso == 7){
-                                    db.Cuenta.update({
-                                        CuentaEtapa7Id:req.body.proceso,
-                                        CuentaEstado7Id:req.body.estado,
-                                        CuentaResponsable7Id:req.body.responsable
-                                    },{
-                                        where:{busqueda_x_id:req.body.busqueda_x_id}
-                                    })
-                                    .then((resultados)=>{
-                                        db.Cuenta.findOne({
-                                            where:{busqueda_x_id:req.body.busqueda_x_id}
-                                        })
-                                        .then((equipo)=>{
-                                            res.render("proceso_guardado",{equipo});
-                                            });
-                                        });
-                                }
-                                    else{
-                                        db.Cuenta.update({
-                                            CuentaEtapa8Id:req.body.proceso,
-                                            CuentaEstado8Id:req.body.estado,
-                                            CuentaResponsable8Id:req.body.responsable
-                                        },{
-                                            where:{busqueda_x_id:req.body.busqueda_x_id}
-                                        })
-                                        .then((resultados)=>{
-                                            db.Cuenta.findOne({
-                                                where:{busqueda_x_id:req.body.busqueda_x_id}
-                                            })
-                                            .then((equipo)=>{
-                                                res.render("proceso_guardado",{equipo});
-                                            });
-                                        });
-                                    };
+                        });
+                    };
+        }
+            else{
+                let pedido_proceso = db.Etapa.findAll();
+                let pedido_estado = db.Estado.findAll();
+                let pedido_responsable = db.Responsable.findAll();
+                let pedido_cuenta = db.Cuenta.findOne({
+                    where:{busqueda_x_id:req.params.busqueda_x_id}
+                })
+
+                Promise.all([pedido_proceso,pedido_estado,pedido_responsable,pedido_cuenta])
+                .then(([procesos,estados,responsables,cuenta])=>{
+                    res.render("procesos",{procesos,estados,responsables,cuenta});
+                });
+            }
     },
     editar:(req,res)=>{
         let pedido_alta = db.Tipo_alta.findAll();
