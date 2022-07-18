@@ -249,7 +249,7 @@ let controlador_general = {
 
                 Promise.all([pedido_proceso,pedido_estado,pedido_responsable,pedido_cuenta])
                 .then(([procesos,estados,responsables,cuenta])=>{
-                    res.render("procesos",{procesos,estados,responsables,cuenta});
+                    res.render("procesos",{procesos,estados,responsables,cuenta,datos:req.body,errores:errores.mapped()});
                 });
             }
     },

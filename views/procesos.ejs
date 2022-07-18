@@ -11,6 +11,7 @@
                 <input type="text" name="busqueda_x_id" value="<%= cuenta.busqueda_x_id %>">
             </div>
             <div class="campos_formulario">
+                <p style="color:red"><%= locals.errores && errores.proceso ? errores.proceso.msg : "" %></p>
                 <label>Proceso</label>
                 <select name="proceso">
                     <option value="">Seleccioná etapa</option>
@@ -20,6 +21,7 @@
                 </select>
             </div>
             <div class="campos_formulario">
+                <p style="color:red"><%= locals.errores && errores.estado ? errores.estado.msg : "" %></p>
                 <label>Estado</label>
                 <select name="estado">
                     <option value="">seleccioná estado</option>
@@ -29,6 +31,7 @@
                 </select>
             </div>
             <div class="campos_formulario">
+                <p style=" color:red"><%= locals.errores && errores.responsable ? errores.responsable.msg : "" %></p>
                 <label>Responsable</label>
                 <select name="responsable">
                     <option value="">Seleccioná responsable</option>
