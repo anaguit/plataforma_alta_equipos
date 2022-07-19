@@ -22,16 +22,15 @@ let controlador_general = {
         if(errores.isEmpty()){
             db.Cuenta.findOne({
                 where:{busqueda_x_id:req.body.nr_serie + req.body.nr_cuenta},
-                include:[{association:"CuentaDistribuidor"},{association:"CuentaTipoAlta"}]/*,
-                    /*{association:"CuentaEstado1"},{association:"CuentaEtapa1"},{association:"CuentaResponsable1"},
+                include:[{association:"CuentaDistribuidor"},{association:"CuentaTipoAlta"}/*,
+                    {association:"CuentaEstado1"},{association:"CuentaEtapa1"},{association:"CuentaResponsable1"},
                     {association:"CuentaEstado2"},{association:"CuentaEtapa2"},{association:"CuentaResponsable2"},
                     {association:"CuentaEstado3"},{association:"CuentaEtapa3"},{association:"CuentaResponsable3"},
                     {association:"CuentaEstado4"},{association:"CuentaEtapa4"},{association:"CuentaResponsable4"},
                     {association:"CuentaEstado5"},{association:"CuentaEtapa5"},{association:"CuentaResponsable5"},
                     {association:"CuentaEstado6"},{association:"CuentaEtapa6"},{association:"CuentaResponsable6"},
                     {association:"CuentaEstado7"},{association:"CuentaEtapa7"},{association:"CuentaResponsable7"},
-                    {association:"CuentaEstado8"},{association:"CuentaEtapa8"},{association:"CuentaResponsable8"}
-                */
+            {association:"CuentaEstado8"},{association:"CuentaEtapa8"},{association:"CuentaResponsable8"}*/]               
             })
             .then((equipo)=>{
                 if(equipo !== null){
@@ -51,6 +50,22 @@ let controlador_general = {
                     res.render("inicio",{errores:errores.mapped(),tipos_alta,distribuidores,datos:req.body});
                 });
         };        
+    },
+    historial:(req,res)=>{
+        db.Cuenta.findOne({
+            where:{busqueda_x_id:req.params.busqueda_x_id},
+            include:[{association:"CuentaEstado1"},{association:"CuentaEtapa1"},{association:"CuentaResponsable1"},
+            {association:"CuentaEstado2"},{association:"CuentaEtapa2"},{association:"CuentaResponsable2"},
+            {association:"CuentaEstado3"},{association:"CuentaEtapa3"},{association:"CuentaResponsable3"},
+            {association:"CuentaEstado4"},{association:"CuentaEtapa4"},{association:"CuentaResponsable4"},
+            {association:"CuentaEstado5"},{association:"CuentaEtapa5"},{association:"CuentaResponsable5"},
+            {association:"CuentaEstado6"},{association:"CuentaEtapa6"},{association:"CuentaResponsable6"},
+            {association:"CuentaEstado7"},{association:"CuentaEtapa7"},{association:"CuentaResponsable7"},
+            {association:"CuentaEstado8"},{association:"CuentaEtapa8"},{association:"CuentaResponsable8"}]
+        })
+        .then((equipo)=>{
+            res.render("historial",{equipo});
+        })
     },
     guardar_inicio:(req,res)=>{
         let errores = validationResult(req);
