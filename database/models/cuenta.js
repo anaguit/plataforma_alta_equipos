@@ -9,7 +9,7 @@ function cuenta_data(sequelize,DataTypes){
         distribuidor_nuevo:{type:DataTypes.STRING(50)},
         numero_cuenta:{type:DataTypes.STRING(50)},
         busqueda_x_id:{type:DataTypes.STRING(50)},
-        diferencia_hora:{type:DataTypes.TIME, allowNull:false}
+        //diferencia_hora:{type:DataTypes.TIME, allowNull:false}
     };
 
     let config = {

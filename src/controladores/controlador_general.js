@@ -1,6 +1,7 @@
 let{ sequelize, Sequelize } = require('../../database/models');
 let db = require("../../database/models");
 let Op = db.Sequelize.Op;
+let moment = require("moment");
 
 let {validationResult} = require("express-validator");
 
@@ -34,7 +35,10 @@ let controlador_general = {
             })
             .then((equipo)=>{
                 if(equipo !== null){
-                    res.render("detalle_equipo",{equipo});
+                    let tiempo = moment(equipo.fecha_ingreso_mail, "YYYYMMDD").fromNow()
+                    console.log(tiempo);
+                    //res.send(tiempo);
+                    res.render("detalle_equipo",{equipo,tiempo});
                 }
                     else{
                         res.render("no_encontrado");
@@ -77,7 +81,8 @@ let controlador_general = {
         {association:"CuentaEstado7"},{association:"CuentaEtapa7"},{association:"CuentaResponsable7"},
         {association:"CuentaEstado8"},{association:"CuentaEtapa8"},{association:"CuentaResponsable8"}]})
         .then((equipos)=>{
-            res.render("total_equipos",{equipos});
+            //let tiempo = moment(equipos[0].fecha_ingreso_mail, "YYYYMMDD").fromNow()
+            res.render("total_equipos",{equipos/*,tiempo*/});
         })
     },
     guardar_inicio:(req,res)=>{
@@ -91,7 +96,8 @@ let controlador_general = {
                 CuentaDistribuidorId: req.body.distribuidor,
                 distribuidor_nuevo: req.body.distribuidor_nuevo,
                 numero_cuenta: req.body.numero_cuenta,
-                busqueda_x_id: req.body.numero_pos + req.body.numero_cuenta
+                busqueda_x_id: req.body.numero_pos + req.body.numero_cuenta,
+                //diferencia_hora: Date.now() - req.body.fecha_mail
             }).
             then((resultado)=>{
                 db.Cuenta.findOne({

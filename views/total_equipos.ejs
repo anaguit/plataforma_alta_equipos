@@ -5,50 +5,55 @@
     <%- include("./parciales/header") %>
     <main>
         <p>Todos los equipos</p>
-        <% for(let equipo of equipos){ %>
-            <p>Número serie: <%= equipo.pos_sunmi %></p>
-            <p>Número de cuenta: <%= equipo.numero_cuenta %></p>
-            <% if(equipo.CuentaEtapa1Id !== null){ %>
-                <p>Etapa: <%= equipo.CuentaEtapa1.etapa %></p>
-                <p>Estado: <%= equipo.CuentaEstado1.estado %></p>
-                <p>Responsable: <%= equipo.CuentaResponsable1.nombre %></p>
-            <% } %>
-            <% if(equipo.CuentaEtapa2Id !== null){ %>
-                <p>Etapa: <%= equipo.CuentaEtapa2.etapa %></p>
-                <p>Estado: <%= equipo.CuentaEstado2.estado %></p>
-                <p>Responsable: <%= equipo.CuentaResponsable2.nombre %></p>
-            <% } %>
-            <% if(equipo.CuentaEtapa3Id !== null){ %>
-                <p>Etapa: <%= equipo.CuentaEtapa3.etapa %></p>
-                <p>Estado: <%= equipo.CuentaEstado3.estado %></p>
-                <p>Responsable: <%= equipo.CuentaResponsable3.nombre %></p>
-            <% } %>
-            <% if(equipo.CuentaEtapa4Id !== null){ %>
-                <p>Etapa: <%= equipo.CuentaEtapa4.etapa %></p>
-                <p>Estado: <%= equipo.CuentaEstado4.estado %></p>
-                <p>Responsable: <%= equipo.CuentaResponsable4.nombre %></p>
+        <div>
+            <% for(let equipo of equipos){ %>
+                <p>Número serie: <%= equipo.pos_sunmi %></p>
+                <p>Número de cuenta: <%= equipo.numero_cuenta %></p>
+                <!-- <% if(equipo.diferencia_hora !== null){ %>
+                    <p>Tiempo espera: <%= equipo.diferencia_hora %></p>
+                <% } %> -->
+                <% if(equipo.CuentaEtapa1Id !== null){ %>
+                    <p>Etapa: <%= equipo.CuentaEtapa1.etapa %></p>
+                    <p>Estado: <%= equipo.CuentaEstado1.estado %></p>
+                    <p>Responsable: <%= equipo.CuentaResponsable1.nombre %></p>
                 <% } %>
-            <% if(equipo.CuentaEtapa5Id !== null){ %>
-                <p>Etapa: <%= equipo.CuentaEtapa5.etapa %></p>
-                <p>Estado: <%= equipo.CuentaEstado5.estado %></p>
-                <p>Responsable: <%= equipo.CuentaResponsable5.nombre %></p>
+                <% if(equipo.CuentaEtapa2Id !== null){ %>
+                    <p>Etapa: <%= equipo.CuentaEtapa2.etapa %></p>
+                    <p>Estado: <%= equipo.CuentaEstado2.estado %></p>
+                    <p>Responsable: <%= equipo.CuentaResponsable2.nombre %></p>
+                <% } %>
+                <% if(equipo.CuentaEtapa3Id !== null){ %>
+                    <p>Etapa: <%= equipo.CuentaEtapa3.etapa %></p>
+                    <p>Estado: <%= equipo.CuentaEstado3.estado %></p>
+                    <p>Responsable: <%= equipo.CuentaResponsable3.nombre %></p>
+                <% } %>
+                <% if(equipo.CuentaEtapa4Id !== null){ %>
+                    <p>Etapa: <%= equipo.CuentaEtapa4.etapa %></p>
+                    <p>Estado: <%= equipo.CuentaEstado4.estado %></p>
+                    <p>Responsable: <%= equipo.CuentaResponsable4.nombre %></p>
+                    <% } %>
+                <% if(equipo.CuentaEtapa5Id !== null){ %>
+                    <p>Etapa: <%= equipo.CuentaEtapa5.etapa %></p>
+                    <p>Estado: <%= equipo.CuentaEstado5.estado %></p>
+                    <p>Responsable: <%= equipo.CuentaResponsable5.nombre %></p>
+                <% } %>
+                <% if(equipo.CuentaEtapa6Id !== null){ %>
+                    <p>Etapa: <%= equipo.CuentaEtapa6.etapa %></p>
+                    <p>Estado: <%= equipo.CuentaEstado6.estado %></p>
+                    <p>Responsable: <%= equipo.CuentaResponsable6.nombre %></p>
+                <% } %>
+                <% if(equipo.CuentaEtapa7Id !== null){ %>
+                    <p>Etapa: <%= equipo.CuentaEtapa7.etapa %></p>
+                    <p>Estado: <%= equipo.CuentaEstado7.estado %></p>
+                    <p>Responsable: <%= equipo.CuentaResponsable7.nombre %></p>
+                <% } %>
+                <% if(equipo.CuentaEtapa8Id !== null){ %>
+                    <p>Etapa: <%= equipo.CuentaEtapa8.etapa %></p>
+                    <p>Estado: <%= equipo.CuentaEstado8.estado %></p>
+                    <p>Responsable: <%= equipo.CuentaResponsable8.nombre %></p>
+                <% } %>
             <% } %>
-            <% if(equipo.CuentaEtapa6Id !== null){ %>
-                <p>Etapa: <%= equipo.CuentaEtapa6.etapa %></p>
-                <p>Estado: <%= equipo.CuentaEstado6.estado %></p>
-                <p>Responsable: <%= equipo.CuentaResponsable6.nombre %></p>
-            <% } %>
-            <% if(equipo.CuentaEtapa7Id !== null){ %>
-                <p>Etapa: <%= equipo.CuentaEtapa7.etapa %></p>
-                <p>Estado: <%= equipo.CuentaEstado7.estado %></p>
-                <p>Responsable: <%= equipo.CuentaResponsable7.nombre %></p>
-            <% } %>
-            <% if(equipo.CuentaEtapa8Id !== null){ %>
-                <p>Etapa: <%= equipo.CuentaEtapa8.etapa %></p>
-                <p>Estado: <%= equipo.CuentaEstado8.estado %></p>
-                <p>Responsable: <%= equipo.CuentaResponsable8.nombre %></p>
-            <% } %>
-        <% } %>
+        </div>
     </main>
     <%- include("./parciales/footer") %>
 </body>

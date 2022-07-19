@@ -11,6 +11,10 @@
         <h3>Tipo de alta: <%= equipo.CuentaTipoAlta.tipo %></h3>
         <!-- <h3>Distribuidor nuevo: <%= equipo.distribuidor_nuevo %></h3> --> <!-- revisar como visualizar el dato del distribuidor -->
         <h3>Distribuidor: <%= equipo.CuentaDistribuidor.nombre %></h3>
+        <p>Tiempo en espera: <%= tiempo %></p>
+        <!-- <% if(equipo.diferencia_hora !== null){ %>
+            <p>Tiempo en espera: <%= tiempo %></p>
+        <% } %> -->
         <div>
             <a href="/editar/<%= equipo.busqueda_x_id %>"><button>Editar</button></a>
             <a href="/procesos/<%= equipo.busqueda_x_id %>"><button>Cargar nuevo proceso</button></a>
