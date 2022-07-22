@@ -4,9 +4,13 @@
 <body>
     <%- include("./parciales/header") %>
     <main>
-        <h3>Equipo Editado con éxito</h3>
-        <a href="/procesos/<%= equipo.busqueda_x_id %>"><button>Cargar nuevo proceso</button></a>
-        <a href="/"><button>Volver a inicio</button></a>
+        <div class="procesos_exitosos">
+            <h1 class="titulo_exitoso">Equipo Editado con éxito</h1>
+            <div class="botones_exitoso">
+                <a href="/procesos/<%= equipo.busqueda_x_id %>" class="botones_general">Cargar nuevo proceso</a>
+                <a href="/" class="botones_general">Volver a inicio</a>
+            </div>
+        </div>
     </main>
     <%- include("./parciales/footer") %>
 </body>

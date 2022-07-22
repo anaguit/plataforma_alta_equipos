@@ -4,10 +4,14 @@
 <body>
     <%- include("./parciales/header") %>
     <main>
-        <h3>Proceso guardado</h3>
-        <a href="/procesos/<%= equipo.busqueda_x_id %>"><button>Cargar nuevo proceso</button></a> <!-- modificar la ruta a parametrizada -->
-        <a href="/"><button>Finalizar</button></a>
-        <a href="/resultados/historial/<%= equipo.busqueda_x_id %>"><button>Información estado de los procesos</button></a>
+        <div class="procesos_exitosos">
+            <h1 class="titulo_exitoso">Proceso guardado</h1>
+            <div class="botones_exitoso">
+                <a href="/procesos/<%= equipo.busqueda_x_id %>" class="botones_general">Cargar nuevo proceso</a> <!-- modificar la ruta a parametrizada -->
+                <a href="/" class="botones_general">Finalizar</a>
+                <a href="/resultados/historial/<%= equipo.busqueda_x_id %>" class="botones_general">Información estado de los procesos</a>
+            </div>
+        </div>
     </main>
     <%- include("./parciales/footer") %>
 </body>
