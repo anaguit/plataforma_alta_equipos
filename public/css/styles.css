@@ -4,6 +4,8 @@
 }
 .logo{
     position: fixed;
+    background-color: orange;
+    padding: 10px; 
 }
 .banner{
     width: 100vw;
@@ -107,4 +109,9 @@ footer{
 }
 .label_proceso{
     text-align: center;
+}
+.contenedor_detalle{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
 }

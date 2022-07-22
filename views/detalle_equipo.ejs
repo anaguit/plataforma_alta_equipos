@@ -4,22 +4,29 @@
 <body>
     <%- include("./parciales/header") %>
     <main>
-        <h3>Numero de pos: <%=equipo.pos_sunmi %></h3>
-        <h3>Numero de cuenta: <%= equipo.numero_cuenta %></h3>
-        <h3>Fecha de ingreso del mail: <%= equipo.fecha_ingreso_mail %></h3>
-        <h3>Hora de ingreso del mail: <%= equipo.hora_ingreso_mail %></h3>
-        <h3>Tipo de alta: <%= equipo.CuentaTipoAlta.tipo %></h3>
-        <!-- <h3>Distribuidor nuevo: <%= equipo.distribuidor_nuevo %></h3> --> <!-- revisar como visualizar el dato del distribuidor -->
-        <h3>Distribuidor: <%= equipo.CuentaDistribuidor.nombre %></h3>
-        <p>Tiempo en espera: <%= tiempo %></p>
+        <h1 class="titulo_formulario">Detalle equipo <%=equipo.pos_sunmi %></h1>
+        <div class="contenedor_detalle">
+            <div class="detalle_1">
+                <p>Numero de pos: <%=equipo.pos_sunmi %></p>
+                <p>Numero de cuenta: <%= equipo.numero_cuenta %></p>
+                <p>Fecha de ingreso del mail: <%= equipo.fecha_ingreso_mail %></p>
+                <p>Hora de ingreso del mail: <%= equipo.hora_ingreso_mail %></p>
+            </div>
+            <div class="detalle_2">
+                <p>Tipo de alta: <%= equipo.CuentaTipoAlta.tipo %></p>
+                <!-- <h3>Distribuidor nuevo: <%= equipo.distribuidor_nuevo %></h3> --> <!-- revisar como visualizar el dato del distribuidor -->
+                <p>Distribuidor: <%= equipo.CuentaDistribuidor.nombre %></p>
+                <p>Tiempo en espera: <%= tiempo %></p>
+            </div>
+        </div>
         <!-- <% if(equipo.diferencia_hora !== null){ %>
             <p>Tiempo en espera: <%= tiempo %></p>
         <% } %> -->
-        <div>
-            <a href="/editar/<%= equipo.busqueda_x_id %>"><button>Editar</button></a>
-            <a href="/procesos/<%= equipo.busqueda_x_id %>"><button>Cargar nuevo proceso</button></a>
+        <div class="botones_exitoso">
+            <a href="/editar/<%= equipo.busqueda_x_id %>" class="botones_general">Editar</a>
+            <a href="/procesos/<%= equipo.busqueda_x_id %>" class="botones_general">Cargar nuevo proceso</a>
+            <a href="/resultados/historial/<%= equipo.busqueda_x_id %>" class="botones_general">Información estado de los proceso</a>
         </div>
-        <a href="/resultados/historial/<%= equipo.busqueda_x_id %>">Información estado de los proceso</a>
     </main>
     <%- include("./parciales/footer") %>
 </body>
