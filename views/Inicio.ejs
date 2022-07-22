@@ -4,40 +4,30 @@
 <body>
     <%- include("./parciales/header") %>
     <main>
-        <div class="contenedor_busqueda">
-            <form action="/resultados" method="POST">
-                <p style="color:red" class="validaciones"><%= locals.errores && errores.nr_serie ? errores.nr_serie.msg : "" %></p>
-                <!-- <P style="color:red"><%= locals.errores && errores.nr_cuenta ? errores.nr_cuenta.msg : "" %></P> -->
-                <input type="text" placeholder="Número de pos" name="nr_serie" value="<%= locals.datos && datos.nr_serie ? datos.nr_serie : '' %>">
-                <P style="color:red" class="validaciones"><%= locals.errores && errores.nr_cuenta ? errores.nr_cuenta.msg : "" %></P>
-                <input type="text" placeholder="Número de cuenta" name="nr_cuenta" value="<%= locals.datos && datos.nr_cuenta ? datos.nr_cuenta : '' %>">
-                <button type="submit">Buscar</button>
-            </form>
-        </div>
             <h1 class="titulo_formulario">Cargar equipo nuevo</h1>
             <div class="contenedor_crear">
                 <form action="/guardar" method="POST" class="formulario">
                     <div class="contenedor_inputs">
                         <div class="inputs_1">
                             <div class="campos_formulario">
-                                <!-- <p style="color:red"><%= locals.errores && errores.fecha_mail ? errores.fecha_mail.msg: "" %></p> -->
+                                <p style="color:red"><%= locals.errores && errores.fecha_mail ? errores.fecha_mail.msg: "" %></p>
                                 <label>Fecha de ingreso del mail</label>
                                 <input type="date" class="input_crear" name="fecha_mail" value="<%= locals.datos && datos.fecha_mail ? datos.fecha_mail : '' %>">
                             </div>
                             <div class="campos_formulario">
-                                <!-- <p style="color:red"><%= locals.errores && errores.hora_mail ? errores.hora_mail.msg : "" %></p> -->
+                                <p style="color:red"><%= locals.errores && errores.hora_mail ? errores.hora_mail.msg : "" %></p>
                                 <label>Hora de ingreso del mail</label>
                                 <input type="time" class="input_crear" name="hora_mail" value="<%= locals.datos && datos.hora_mail ? datos.hora_mail : '' %>">
                             </div>
                             <div class="campos_formulario">
-                                <!-- <p style="color:red"><%= locals.errores && errores.numero_pos ? errores.numero_pos.msg : "" %></p> -->
+                                <p style="color:red"><%= locals.errores && errores.numero_pos ? errores.numero_pos.msg : "" %></p>
                                 <label>Número de pos</label>
                                 <input type="text" class="input_crear" name="numero_pos" value="<%= locals.datos && datos.numero_pos ? datos.numero_pos : '' %>">
                             </div>
                         </div>
                         <div class="inputs_2">
                             <div class="campos_formulario">
-                                <!-- <p style="color:red"><%= locals.errores && errores.tipo_alta ? errores.tipo_alta.msg : "" %></p> -->
+                                <p style="color:red"><%= locals.errores && errores.tipo_alta ? errores.tipo_alta.msg : "" %></p>
                                 <label>Tipo de alta</label>
                                 <select name="tipo_alta" class="input_crear">
                                     <option value="">Seleccioná opción</option>
@@ -47,7 +37,7 @@
                                 </select>
                             </div>
                             <div class="campos_formulario">
-                                <!-- <p style="color:red"><%= locals.errores && errores.distribuidor ? errores.distribuidor.msg : "" %></p> -->
+                                <p style="color:red"><%= locals.errores && errores.distribuidor ? errores.distribuidor.msg : "" %></p>
                                 <label>Distribuidor</label>
                                 <select name="distribuidor" class="input_crear">
                                     <option value="">Seleccioná distribuidor</option>
@@ -61,7 +51,7 @@
                                 <input type="text" name="distribuidor_nuevo">
                             </div> -->
                             <div class="campos_formulario">
-                                <!-- <p style="color:red"><%= locals.errores && errores.numero_cuenta ? errores.numero_cuenta.msg : "" %></p> -->
+                                <p style="color:red"><%= locals.errores && errores.numero_cuenta ? errores.numero_cuenta.msg : "" %></p> 
                                 <label>Número de cuenta</label>
                                 <input type="text" class="input_crear" name="numero_cuenta" value="<%= locals.datos && datos.numero_cuenta ? datos.numero_cuenta : '' %>">
                             </div>
@@ -77,7 +67,6 @@
                     </div> -->
                 </form>
             </div>
-        </div>
     </main>
     <%- include("./parciales/footer") %>
 </body>

@@ -1,5 +1,19 @@
 <header>
-    <a href="/"><img src="/imagenes_front/cp-logo-dark.png"></a>
-    <img src="/imagenes_front/BunnerCargaEquipos.jpg" class="logo">
-    <a href="/listado">Ver todos los equipos</a>
+    <a href="/"><img src="/imagenes_front/cp-logo-dark.png" class="logo"></a>
+    <img src="/imagenes_front/BunnerCargaEquipos.jpg" class="banner">
+    <div class="contenedor_superior">
+        <div>
+            <a href="/listado" class="link_lista">Ver todos los equipos</a>
+        </div>
+        <div class="contenedor_busqueda">
+            <form action="/resultados" method="POST">
+                <p style="color:red" class="validaciones"><%= locals.errores && errores.nr_serie ? errores.nr_serie.msg : "" %></p>
+                <P style="color:red"><%= locals.errores && errores.nr_cuenta ? errores.nr_cuenta.msg : "" %></P>
+                <input type="text" placeholder="Número de pos" class="input_busqueda" name="nr_serie" value="<%= locals.datos && datos.nr_serie ? datos.nr_serie : '' %>">
+                <!-- <P style="color:red" class="validaciones"><%= locals.errores && errores.nr_cuenta ? errores.nr_cuenta.msg : "" %></P> -->
+                <input type="text" placeholder="Número de cuenta" class="input_busqueda" name="nr_cuenta" value="<%= locals.datos && datos.nr_cuenta ? datos.nr_cuenta : '' %>">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
 </header>

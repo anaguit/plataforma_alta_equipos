@@ -2,6 +2,26 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+.logo{
+    position: fixed;
+}
+.banner{
+    width: 100vw;
+}
+.contenedor_superior{
+    display:flex;
+    justify-content: space-between;
+}
+.link_lista{
+    margin-left: 40px;
+    text-decoration: none;
+    color:black;
+    font-weight:bold;
+    font-size: 20px;
+    background-color: #2F8BE8;
+    padding: 10px;
+    border: solid 3px black;
+}
 .contenedor_busqueda{
     display: flex;
     flex-direction: row-reverse;
@@ -18,9 +38,7 @@ label{
     font-size: 20px;
     margin-bottom: 10px;
 }
-.validaciones{
-    display:inline-block;
-}
+
 .contenedor_crear{
     display:flex;
     flex-direction: column;
@@ -41,5 +59,15 @@ label{
     justify-content:space-around;
 }
 .titulo_formulario{
+    text-align: center;
+}
+
+footer{
+    background-color: orange;
+}
+.input_busqueda{
+    background-color: orange;
+    
+    height: 35px;
     text-align: center;
 }
