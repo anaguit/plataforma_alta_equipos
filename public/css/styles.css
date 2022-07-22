@@ -95,3 +95,16 @@ footer{
     width: 30%;
     text-align: center;
 }
+.input_oculto{
+    display: none;
+}
+.input_proceso{
+    background-color: orange;
+    border:none;
+    width:350%;
+    height: 40px;
+    text-align: center;
+}
+.label_proceso{
+    text-align: center;
+}

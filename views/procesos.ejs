@@ -4,47 +4,54 @@
 <body>
     <%- include("./parciales/header") %>
     <main>
-        <h3>Agregar nuevo proceso</h3>
-        <form action="/procesos/<%= cuenta.busqueda_x_id %>" method="POST"> <!-- cambié la ruta de post-->
-            <div class="campos_formulario">
-                <label>Ocultar input</label>
-                <input type="text" name="busqueda_x_id" value="<%= cuenta.busqueda_x_id %>">
-            </div>
-            <div class="campos_formulario">
-                <p style="color:red"><%= locals.errores && errores.proceso ? errores.proceso.msg : "" %></p>
-                <label>Proceso</label>
-                <select name="proceso">
-                    <option value="">Seleccioná etapa</option>
-                    <% for(let proceso of procesos) { %>
-                        <option value="<%= proceso.id %>"<%= locals.datos && (datos.proceso == proceso.id) ? 'selected':null %>><%= proceso.etapa %></option>
-                    <% } %>
-                </select>
-            </div>
-            <div class="campos_formulario">
-                <p style="color:red"><%= locals.errores && errores.estado ? errores.estado.msg : "" %></p>
-                <label>Estado</label>
-                <select name="estado">
-                    <option value="">seleccioná estado</option>
-                    <% for(let estado of estados) { %>
-                        <option value="<%= estado.id %>" <%= locals.datos && (datos.estado == estado.id) ? 'selected':null %>><%= estado.estado %></option>
-                    <% } %>
-                </select>
-            </div>
-            <div class="campos_formulario">
-                <p style=" color:red"><%= locals.errores && errores.responsable ? errores.responsable.msg : "" %></p>
-                <label>Responsable</label>
-                <select name="responsable">
-                    <option value="">Seleccioná responsable</option>
-                    <% for(let responsable of responsables){ %>
-                        <option value="<%= responsable.id %>"<%= locals.datos && (datos.responsable == responsable.id) ? 'selected':null %>><%= responsable.nombre %></option> 
-                    <% } %>
-                </select>
-            </div>
-            <div class="botones_formulario">
-                <button type="submit">Aceptar</button>
-                <button type="reset">Cancelar</button>
-            </div>
-        </form>
+        <h1 class="titulo_formulario">Agregar nuevo proceso</h1>
+        <div class="contenedor_crear">
+            <form action="/procesos/<%= cuenta.busqueda_x_id %>" method="POST"> <!-- cambié la ruta de post-->
+                <div class="campos_formulario">
+                    <input type="text" name="busqueda_x_id" value="<%= cuenta.busqueda_x_id %>" class="input_oculto">
+                </div>
+                <div class="contenedor_inputs">
+                    <div class="inputs_1">
+                        <div class="campos_formulario">
+                            <p style="color:red"><%= locals.errores && errores.proceso ? errores.proceso.msg : "" %></p>
+                            <label>Proceso</label>
+                            <select name="proceso" class="input_crear">
+                                <option value="">Seleccioná etapa</option>
+                                <% for(let proceso of procesos) { %>
+                                    <option value="<%= proceso.id %>"<%= locals.datos && (datos.proceso == proceso.id) ? 'selected':null %>><%= proceso.etapa %></option>
+                                <% } %>
+                            </select>
+                        </div>
+                        <div class="campos_formulario">
+                            <p style=" color:red"><%= locals.errores && errores.responsable ? errores.responsable.msg : "" %></p>
+                            <label>Responsable</label>
+                            <select name="responsable" class="input_proceso">
+                                <option value="">Seleccioná responsable</option>
+                                <% for(let responsable of responsables){ %>
+                                    <option value="<%= responsable.id %>"<%= locals.datos && (datos.responsable == responsable.id) ? 'selected':null %>><%= responsable.nombre %></option> 
+                                <% } %>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="inputs_2">
+                        <div class="campos_formulario">
+                            <p style="color:red"><%= locals.errores && errores.estado ? errores.estado.msg : "" %></p>
+                            <label>Estado</label>
+                            <select name="estado" class="input_crear">
+                                <option value="">seleccioná estado</option>
+                                <% for(let estado of estados) { %>
+                                    <option value="<%= estado.id %>" <%= locals.datos && (datos.estado == estado.id) ? 'selected':null %>><%= estado.estado %></option>
+                                <% } %>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="botones_formulario">
+                    <button type="submit">Aceptar</button>
+                    <button type="reset">Cancelar</button>
+                </div>
+            </form>
+        </div>
     </main>
     <%- include("./parciales/footer") %>
 </body>
