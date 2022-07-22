@@ -115,3 +115,21 @@ footer{
     justify-content: space-around;
     font-size: 20px;
 }
+.item_etapa{
+    padding: 10px;
+    margin: 10px;
+    border:solid 2px black
+}
+.historial{
+    display:flex;
+    flex-direction: column;
+    
+}
+.historial_1{
+    display: flex;
+    justify-content: space-around;
+}
+.historial_2{
+    display: flex;
+    justify-content: space-around;
+}

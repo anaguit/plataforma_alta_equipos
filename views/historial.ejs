@@ -4,64 +4,72 @@
 <body>
     <%- include("./parciales/header") %>
     <main>
-        <h4>Historial registro <%= equipo.busqueda_x_id %></4>
-            <% if(equipo.CuentaEtapa1Id !== null){%>
-                <div class="item_etapa">
-                    <p><%= equipo.CuentaEtapa1.etapa %></p>
-                    <p><%= equipo.CuentaEstado1.estado %></p>
-                    <p><%= equipo.CuentaResponsable1.nombre %></p>
-                </div>
-            <% } %>
-            <% if(equipo.CuentaEtapa2Id !== null){ %>
-                <div class="item_etapa">
-                    <p><%= equipo.CuentaEtapa2.etapa %></p>
-                    <p><%= equipo.CuentaEstado2.estado %></p>
-                    <p><%= equipo.CuentaResponsable2.nombre %></p>
-                </div>
-            <% } %>
-            <% if(equipo.CuentaEtapa3Id !== null){ %>
-                <div class="item_etapa">
-                    <p><%= equipo.CuentaEtapa3.etapa %></p>
-                    <p><%= equipo.CuentaEstado3.estado %></p>
-                    <p><%= equipo.CuentaResponsable3.nombre %></p>
-                </div>
-            <% } %>
-            <% if(equipo.CuentaEtapa4Id !== null){ %>
-                <div class="item_etapa">
-                    <p><%= equipo.CuentaEtapa4.etapa %></p>
-                    <p><%= equipo.CuentaEstado4.estado %></p>
-                    <p><%= equipo.CuentaResponsable4.nombre %></p>
-                </div>
-            <% } %>
-            <% if(equipo.CuentaEtapa5Id !== null){ %>
-                <div class="item_etapa">
-                    <p><%= equipo.CuentaEtapa5.etapa %></p>
-                    <p><%= equipo.CuentaEstado5.estado %></p>
-                    <p><%= equipo.CuentaResponsable5.nombre %></p>
-                </div>
-            <% } %>
-            <% if(equipo.CuentaEtapa6Id !== null){ %>
-                <div class="item_etapa">
-                    <p><%= equipo.CuentaEtapa6.etapa %></p>
-                    <p><%= equipo.CuentaEstado6.estado %></p>
-                    <p><%= equipo.CuentaResponsable6.nombre %></p>
-                </div>
-            <% } %>
-            <% if(equipo.CuentaEtapa7Id !== null){ %>
-                <div class="item_etapa">
-                    <p><%= equipo.CuentaEtapa7.etapa %></p>
-                    <p><%= equipo.CuentaEstado7.estado %></p>
-                    <p><%= equipo.CuentaResponsable7.nombre %></p>
-                </div>
-            <% } %>
-            <% if(equipo.CuentaEtapa8Id !== null){ %>
-                <div class="item_etapa">
-                    <p><%= equipo.CuentaEtapa8.etapa %></p>
-                    <p><%= equipo.CuentaEstado8.estado %></p>
-                    <p><%= equipo.CuentaResponsable8.nombre %></p>
-                </div>
-            <% } %>
+        <h1 class="titulo_formulario">Historial equipo <%= equipo.busqueda_x_id %></h1>
+        <div class="historial">
+            <div class="historial_1">
+                <% if(equipo.CuentaEtapa1Id !== null){%>
+                    <div class="item_etapa">
+                        <p>Proceso: <%= equipo.CuentaEtapa1.etapa %></p>
+                        <p>Estado: <%= equipo.CuentaEstado1.estado %></p>
+                        <p>Responsable: <%= equipo.CuentaResponsable1.nombre %></p>
+                    </div>
+                <% } %>
+                <% if(equipo.CuentaEtapa2Id !== null){ %>
+                    <div class="item_etapa">
+                        <p>Proceso: <%= equipo.CuentaEtapa2.etapa %></p>
+                        <p>Estado: <%= equipo.CuentaEstado2.estado %></p>
+                        <p>Responsable: <%= equipo.CuentaResponsable2.nombre %></p>
+                    </div>
+                <% } %>
+                <% if(equipo.CuentaEtapa3Id !== null){ %>
+                    <div class="item_etapa">
+                        <p>Proceso: <%= equipo.CuentaEtapa3.etapa %></p>
+                        <p>Estado: <%= equipo.CuentaEstado3.estado %></p>
+                        <p>Responsable: <%= equipo.CuentaResponsable3.nombre %></p>
+                    </div>
+                <% } %>
+                <% if(equipo.CuentaEtapa4Id !== null){ %>
+                    <div class="item_etapa">
+                        <p>Proceso: <%= equipo.CuentaEtapa4.etapa %></p>
+                        <p>Estado: <%= equipo.CuentaEstado4.estado %></p>
+                        <p>Responsable: <%= equipo.CuentaResponsable4.nombre %></p>
+                    </div>
+                <% } %>
+            </div>
+            <div class="historial_2">
+                <% if(equipo.CuentaEtapa5Id !== null){ %>
+                    <div class="item_etapa">
+                        <p>Proceso: <%= equipo.CuentaEtapa5.etapa %></p>
+                        <p>Estado: <%= equipo.CuentaEstado5.estado %></p>
+                        <p>Responsable: <%= equipo.CuentaResponsable5.nombre %></p>
+                    </div>
+                <% } %>
+                <% if(equipo.CuentaEtapa6Id !== null){ %>
+                    <div class="item_etapa">
+                        <p>Proceso: <%= equipo.CuentaEtapa6.etapa %></p>
+                        <p>Estado: <%= equipo.CuentaEstado6.estado %></p>
+                        <p>Responsable: <%= equipo.CuentaResponsable6.nombre %></p>
+                    </div>
+                <% } %>
+                <% if(equipo.CuentaEtapa7Id !== null){ %>
+                    <div class="item_etapa">
+                        <p>Proceso: <%= equipo.CuentaEtapa7.etapa %></p>
+                        <p>Estado: <%= equipo.CuentaEstado7.estado %></p>
+                        <p>Responsable: <%= equipo.CuentaResponsable7.nombre %></p>
+                    </div>
+                <% } %>
+                <% if(equipo.CuentaEtapa8Id !== null){ %>
+                    <div class="item_etapa">
+                        <p>Proceso: <%= equipo.CuentaEtapa8.etapa %></p>
+                        <p>Estado: <%= equipo.CuentaEstado8.estado %></p>
+                        <p>Responsable: <%= equipo.CuentaResponsable8.nombre %></p>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+        <div class="botones_exitoso">
             <a href="/procesos/<%= equipo.busqueda_x_id %>"><button>Cargar o modificar proceso</button></a>
+        </div>
     </main>
     <%- include("./parciales/footer") %>
 </body>
