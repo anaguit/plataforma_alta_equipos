@@ -133,3 +133,35 @@ footer{
     display: flex;
     justify-content: space-around;
 }
+.total_equipos{
+    /*display: flex;*/
+    flex-direction: column;
+    border:dashed 2px red;
+    background-color: aqua;
+}
+.equipo{
+    /*display: flex;*/
+    border: dashed 2px black;
+}
+.estado_etapa{
+    border:solid 4px green;
+}
+/*.celda_fija{
+    position: fixed;
+}*/
+tr{
+    background-color: #CEE1F3;
+    padding:1%;
+    border: solid 2px black;
+}
+td{
+    width: 2%;
+    padding: 10px;
+    border: solid 1px black;
+}
+th{
+    border: solid 3px black;
+}
+table {
+    border-collapse: collapse;
+  }

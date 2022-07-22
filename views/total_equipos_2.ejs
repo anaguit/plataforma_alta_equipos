@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./parciales/head") %>
+<body>
+    <%- include("./parciales/header") %>
+    <main>
+        <h1 class="titulo_formulario">Todos los equipos</h1>
+        <table>
+            <tr>
+                <th class="celda_fija">Nr de serie</th>
+                <th class="celda_fija">Nr cuenta</th>
+                <th>Etapa</th>
+                <th>Estado</th>
+                <th>Responsable</th>
+                <th>Etapa</th>
+                <th>Estado</th>
+                <th>Responsable</th>
+                <th>Etapa</th>
+                <th>Estado</th>
+                <th>Responsable</th>
+                <th>Etapa</th>
+                <th>Estado</th>
+                <th>Responsable</th>
+                <th>Etapa</th>
+                <th>Estado</th>
+                <th>Responsable</th>
+                <th>Etapa</th>
+                <th>Estado</th>
+                <th>Responsable</th>
+                <th>Etapa</th>
+                <th>Estado</th>
+                <th>Responsable</th>
+                <th>Etapa</th>
+                <th>Estado</th>
+                <th>Responsable</th>                
+            </tr>
+            <% for(let equipo of equipos){ %>
+            <tr>
+                <td class="celda_fija"><strong><%= equipo.pos_sunmi %></strong></td>
+                <td class="celda_fija"><%= equipo.numero_cuenta %></td>
+                <% if(equipo.CuentaEtapa1Id !== null){ %>
+                    <td><%= equipo.CuentaEtapa1.etapa %></td>
+                    <td><%= equipo.CuentaEstado1.estado %></td>
+                    <td><%= equipo.CuentaResponsable1.nombre %></td>
+                <% } else{ %>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                <% } %>
+                    
+                <% if(equipo.CuentaEtapa2Id !== null){ %>
+                    <td><%= equipo.CuentaEtapa2.etapa %></td>
+                    <td><%= equipo.CuentaEstado2.estado %></td>
+                    <td><%= equipo.CuentaResponsable2.nombre %></td>
+                <% } else{ %>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                <% } %>
+
+                <% if(equipo.CuentaEtapa3Id !== null){ %>
+                    <td><%= equipo.CuentaEtapa3.etapa %></td>
+                    <td><%= equipo.CuentaEstado3.estado %></td>
+                    <td><%= equipo.CuentaResponsable3.nombre %></td>
+                <% } else{ %>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                <% } %>
+
+                <% if(equipo.CuentaEtapa4Id !== null){ %>
+                    <td><%= equipo.CuentaEtapa4.etapa %></td>
+                    <td><%= equipo.CuentaEstado4.estado %></td>
+                    <td><%= equipo.CuentaResponsable4.nombre %></td>
+                <% } else{ %>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                <% } %>
+
+                <% if(equipo.CuentaEtapa5Id !== null){ %>
+                    <td><%= equipo.CuentaEtapa5.etapa %></td>
+                    <td><%= equipo.CuentaEstado5.estado %></td>
+                    <td><%= equipo.CuentaResponsable5.nombre %></td>
+                <% } else{ %>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                <% } %>
+
+                <% if(equipo.CuentaEtapa6Id !== null){ %>
+                    <td><%= equipo.CuentaEtapa6.etapa %></td>
+                    <td><%= equipo.CuentaEstado6.estado %></td>
+                    <td><%= equipo.CuentaResponsable6.nombre %></td>
+                <% } else{ %>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                <% } %>
+
+                <% if(equipo.CuentaEtapa7Id !== null){ %>
+                    <td><%= equipo.CuentaEtapa7.etapa %></td>
+                    <td><%= equipo.CuentaEstado7.estado %></td>
+                    <td><%= equipo.CuentaResponsable7.nombre %></td>
+                <% } else{ %>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                <% } %>
+
+                <% if(equipo.CuentaEtapa8Id !== null){ %>
+                    <td><%= equipo.CuentaEtapa8.etapa %></td>
+                    <td><%= equipo.CuentaEstado8.estado %></td>
+                    <td><%= equipo.CuentaResponsable8.nombre %></td>
+                <% } else{ %>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                <% } %>
+            </tr>
+            <% } %>
+        </table>
+    </main>
+    <%- include("./parciales/footer") %>
+</body>
+</html>

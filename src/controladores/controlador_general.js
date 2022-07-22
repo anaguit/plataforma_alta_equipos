@@ -82,7 +82,7 @@ let controlador_general = {
         {association:"CuentaEstado8"},{association:"CuentaEtapa8"},{association:"CuentaResponsable8"}]})
         .then((equipos)=>{
             //let tiempo = moment(equipos[0].fecha_ingreso_mail, "YYYYMMDD").fromNow()
-            res.render("total_equipos",{equipos/*,tiempo*/});
+            res.render("total_equipos_2",{equipos/*,tiempo*/});
         })
     },
     guardar_inicio:(req,res)=>{
