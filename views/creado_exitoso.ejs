@@ -4,8 +4,13 @@
 <body>
     <%- include("./parciales/header") %>
     <main>
-        <h3>Registro creado con éxito</h3>
-        <a href="/procesos/<%= equipo.busqueda_x_id %>"><button>Cargar Proceso</button></a>
+        <div class="procesos_exitosos">
+            <h1 class="titulo_exitoso">Registro creado con éxito</h1>
+            <div class="botones_exitoso">
+                <a href="/procesos/<%= equipo.busqueda_x_id %>" class="botones_general">Cargar Proceso</a>
+                <a href="/" class="botones_general">Finalizar</a>
+            </div>
+        </div>
     </main>
     <%- include("./parciales/footer") %>
 </body>
