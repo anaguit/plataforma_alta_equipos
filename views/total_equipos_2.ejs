@@ -6,9 +6,9 @@
     <main>
         <h1 class="titulo_formulario">Todos los equipos</h1>
         <table>
-            <tr>
-                <th class="celda_fija">Nr de serie</th>
-                <th class="celda_fija">Nr cuenta</th>
+            <tr class="hilera_fija">
+                <th class="columna_fija">Nr de serie</th>
+                <th>Nr cuenta</th>
                 <th>Etapa</th>
                 <th>Estado</th>
                 <th>Responsable</th>
@@ -36,8 +36,8 @@
             </tr>
             <% for(let equipo of equipos){ %>
             <tr>
-                <td class="celda_fija"><strong><%= equipo.pos_sunmi %></strong></td>
-                <td class="celda_fija"><%= equipo.numero_cuenta %></td>
+                <td class="columna_fija"><strong><%= equipo.pos_sunmi %></strong></td>
+                <td><%= equipo.numero_cuenta %></td>
                 <% if(equipo.CuentaEtapa1Id !== null){ %>
                     <td><%= equipo.CuentaEtapa1.etapa %></td>
                     <td><%= equipo.CuentaEstado1.estado %></td>

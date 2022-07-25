@@ -4,6 +4,7 @@
 }
 .logo{
     position: fixed;
+    z-index: 1;
     background-color: orange;
     padding: 10px; 
 }
@@ -146,21 +147,34 @@ footer{
 .estado_etapa{
     border:solid 4px green;
 }
-/*.celda_fija{
-    position: fixed;
-}*/
+.columna_fija{
+    position: sticky;
+    left:0;
+    background-color: orange;
+}
+.hilera_fija{
+    position: sticky;
+    top:0;
+    background-color:orange;
+    min-width: 150px;
+}
 tr{
-    background-color: #CEE1F3;
-    padding:1%;
+    background-color: #F9B364;
     border: solid 2px black;
 }
+tr:nth-child(2n){
+    background-color: #FEFEFE;
+}
 td{
-    width: 2%;
-    padding: 10px;
     border: solid 1px black;
+    height: 50px;
+    min-width: 150px;
+    text-align: center;
 }
 th{
     border: solid 3px black;
+    height: 50px;
+    min-width: 150px;
 }
 table {
     border-collapse: collapse;
