@@ -14,8 +14,6 @@ let controlador_general = {
             .then(([tipos_alta,distribuidores])=>{
                 res.render("inicio",{tipos_alta,distribuidores});
             });
-
-            console.log(req.body);
     },
     resultado_busqueda:(req,res)=>{
         let errores = validationResult(req);
@@ -321,6 +319,21 @@ let controlador_general = {
                 res.render("editado_exitoso",{equipo})
             });
         });
+    },
+    listado_api:(req,res)=>{
+        db.Cuenta.findAll({include:[{association:"CuentaEstado1"},{association:"CuentaEtapa1"},{association:"CuentaResponsable1"},
+        {association:"CuentaEstado2"},{association:"CuentaEtapa2"},{association:"CuentaResponsable2"},
+        {association:"CuentaEstado3"},{association:"CuentaEtapa3"},{association:"CuentaResponsable3"},
+        {association:"CuentaEstado4"},{association:"CuentaEtapa4"},{association:"CuentaResponsable4"},
+        {association:"CuentaEstado5"},{association:"CuentaEtapa5"},{association:"CuentaResponsable5"},
+        {association:"CuentaEstado6"},{association:"CuentaEtapa6"},{association:"CuentaResponsable6"},
+        {association:"CuentaEstado7"},{association:"CuentaEtapa7"},{association:"CuentaResponsable7"},
+        {association:"CuentaEstado8"},{association:"CuentaEtapa8"},{association:"CuentaResponsable8"}]})
+        .then((equipos)=>{
+            //let tiempo = moment(equipos[0].fecha_ingreso_mail, "YYYYMMDD").fromNow()
+            //res.render("total_equipos_2",{equipos,tiempo});
+            res.json(equipos[1])
+        })
     }
 };
 
